@@ -6,8 +6,6 @@ https://store.steampowered.com/app/661130/ChilloutVR
 ## 1. Method
 Download this repo by clicking on Code->"Download Zip" and put all the files in the zip in your ChilloutVR game folder under "ChilloutVR_Data\StreamingAssets\Cohtml\UIResources\CVRTest". Replace the existing files there with the new ones. (Example path where do put the files: "D:\Steamgames\steamapps\common\ChilloutVR\ChilloutVR_Data\StreamingAssets\Cohtml\UIResources\CVRTest")
 
-# Update
-The fastest way to update is to rerun Milckzockers Installer which will always pull the newest files from github.
 
 # UI Changes
 UI Color can be customized ingame
