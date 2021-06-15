@@ -6,10 +6,6 @@ https://store.steampowered.com/app/661130/ChilloutVR
 ## 1. Method
 Download this repo by clicking on Code->"Download Zip" and put all the files in the zip in your ChilloutVR game folder under "ChilloutVR_Data\StreamingAssets\Cohtml\UIResources\CVRTest". Replace the existing files there with the new ones. (Example path where do put the files: "D:\Steamgames\steamapps\common\ChilloutVR\ChilloutVR_Data\StreamingAssets\Cohtml\UIResources\CVRTest")
 
-## 2. Method
-You can download the installer made by [MilchZocker](https://github.com/MilchZocker) [right here](https://github.com/MilchZocker/ChilloutVR-addons/releases/download/0.0.1u/UI-Installer.bat) where you can choose between different UIs. <br>
-Just place the installer in the ChilloutVR game folder, run it and follow the instructions. (UI is called Neradon's UI in there)
-
 # Update
 The fastest way to update is to rerun Milckzockers Installer which will always pull the newest files from github.
 
