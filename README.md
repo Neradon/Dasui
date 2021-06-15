@@ -2,6 +2,11 @@
 Inofficial ChilloutVR UI modification which changes the layout and adds some small quality of life features/fixes.
 https://store.steampowered.com/app/661130/ChilloutVR
 
+
+
+# WARNING
+This version currently only supports version "2021r160 Experimental 2"!
+
 # Installation
 ## 1. Method
 Download this repo by clicking on Code->"Download Zip" and put all the files in the zip in your ChilloutVR game folder under "ChilloutVR_Data\StreamingAssets\Cohtml\UIResources\CVRTest". Replace the existing files there with the new ones. (Example path where do put the files: "D:\Steamgames\steamapps\common\ChilloutVR\ChilloutVR_Data\StreamingAssets\Cohtml\UIResources\CVRTest")
