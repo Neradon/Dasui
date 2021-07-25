@@ -2,7 +2,7 @@
 
 var gameVersion = "-1";
 
-var dasuiVersion = "2021r160 Experimental 3p5";
+var dasuiVersion = "2021r160 EV1";
 
 var compatible = false;
 
