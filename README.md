@@ -1,4 +1,4 @@
-# Only supporting version "2021r160 Experimental 3p5" right now
+# Only supporting version "2021r160 EV1" right now
 
 # DasUi
 Inofficial ChilloutVR UI modification which changes the layout and adds some small quality of life features/fixes.
@@ -7,7 +7,7 @@ https://store.steampowered.com/app/661130/ChilloutVR
 
 
 # WARNING
-This version only supports the gameversion "2021r160 Experimental 3p5"!
+This version only supports the gameversion "2021r160 EV1"!
 
 # Installation
 ## 1. Method
