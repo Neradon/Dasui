@@ -1,4 +1,4 @@
-# Only supporting version "2021r160 EV1" right now
+# Only supporting version "2021r160 EV2" right now
 
 # DasUi
 Inofficial ChilloutVR UI modification which changes the layout and adds some small quality of life features/fixes.
@@ -7,12 +7,14 @@ https://store.steampowered.com/app/661130/ChilloutVR
 
 
 # WARNING
-This version only supports the gameversion "2021r160 EV1"!
+This version only supports the gameversion "2021r160 EV2"!
 
 # Installation
 ## 1. Method
 Download this repo by clicking on Code->"Download Zip" and put all the files in the zip in your ChilloutVR game folder under "ChilloutVR_Data\StreamingAssets\Cohtml\UIResources\CVRTest". Replace the existing files there with the new ones. (Example path where do put the files: "D:\Steamgames\steamapps\common\ChilloutVR\ChilloutVR_Data\StreamingAssets\Cohtml\UIResources\CVRTest")
 
+## 2. Method
+Use the automatic installer from Milchzocker found [Here](https://github.com/MilchZocker/ChilloutVR-Dark-UI/releases/latest)
 
 # UI Changes
 UI Color can be customized ingame
