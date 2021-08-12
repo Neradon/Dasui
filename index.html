@@ -640,6 +640,12 @@
                                 <div id="ControlEnableGamepad" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
                             </div>
                         </div>
+                        <div class="row-wrapper">
+                            <div class="option-caption">VR Fast Flight:</div>
+                            <div class="option-input">
+                                <div id="ControlVRFastFlight" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                            </div>
+                        </div>
                     </div>
 
                     <div id="settings-filter" class="settings-categorie">
@@ -1830,8 +1836,8 @@
             <div id="confirm" class="message-box confirm-box hidden" data-index="0">
                 <h2>[Headline]</h2>
                 <p>[Content]</p>
-                <div class="action-btn yes-btn" onclick="uiConfirmClose(true);">OK</div>
-                <div class="action-btn no-btn" onclick="uiConfirmClose(false);">Cancel</div>
+                <div class="action-btn yes-btn" onclick="uiConfirmClose('true');">OK</div>
+                <div class="action-btn no-btn" onclick="uiConfirmClose('false');">Cancel</div>
             </div>
 
             <div id="loading" class="message-box loading-box hidden" data-index="0">
@@ -1865,7 +1871,7 @@
         </div>
 
         <script src="ui.js"></script>
-        <script src="dasuiMain.js"></script>
+        <script src="dasuimain.js"></script>
         <script>
             var debug = false;
 
@@ -1915,7 +1921,6 @@
                 //uiConfirmShow('Test#3', 'Ist das in Ordnung?', 12);
             }
 
-            
             loadSettings();
         </script>
     </body>
