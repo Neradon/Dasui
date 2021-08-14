@@ -18,18 +18,15 @@ Use the automatic installer from Milchzocker found [Here](https://github.com/Mil
 
 # UI Changes
 UI Color can be customized ingame
-![Home menu](https://github.com/Neradon/CVRPlus/blob/main/ExampleImages/Base.jpg)
-![Custom Color](https://github.com/Neradon/CVRPlus/blob/main/ExampleImages/CustomColor.jpg)
+![Home menu](https://i.imgur.com/RpdpPzm.jpeg)
+![Custom Color](https://i.imgur.com/CpKHu3P.jpg)
 
 Reordered friends based on online status and name and made the whole friend image clickable to open the details page.
 (Obvious visual change for online/offline)
-![Friendlist](https://github.com/Neradon/CVRPlus/blob/main/ExampleImages/Friendlist.jpg)
-
-Added two button next to the add/remove friend button to quickly hide/show/mute/unmute someone without opening the extra setting menu.
-![User Details](https://github.com/Neradon/CVRPlus/blob/main/ExampleImages/UserDetails.jpg)
+![Friendlist](https://i.imgur.com/pzItS0v.jpg)
 
 Local world favourites using the already implemented favourite button on the world details page to quickly find a world you wanna revisit. (Only in until the official world favouriting is in the game)
-![World Favourites](https://github.com/Neradon/CVRPlus/blob/main/ExampleImages/WorldFavourites.jpg)
+![World Favourites](https://i.imgur.com/Nm4kFhq.jpg)
 
 Local world search functionality: Search the currently filtered worlds by name. (Example: To search all available Worlds, click on "public worlds" and then use the search bar)
 ![World search](https://i.imgur.com/XrgKhKI.png)
