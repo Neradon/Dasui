@@ -1,14 +1,22 @@
 
 
-var backgroundClasses = ".content, .toolbar, #world-detail, #instance-detail, #user-detail, #avatar-detail, #avatar-settings, #keyboard, #numpad, #alert, #alertTimed, #confirm, #loading, #push, .tab-contents, .valueList";
+var backgroundClasses = ".user-settings-dialog, .content, .toolbar, #world-detail, #instance-detail, #user-detail, #avatar-detail, #avatar-settings, #keyboard, #numpad, #alert, #alertTimed, #confirm, #loading, #push, .tab-contents, .valueList";
 var backgroundClassesDisabled = ".content-instance-buttons .instance-btn.disabled, .world-instancing .content-btn.disabled:hover, .world-instancing .content-btn.disabled:hover, .avatar-toolbar .toolbar-btn.disabled, .avatar-toolbar .toolbar-btn.disabled:hover, .user-toolbar .toolbar-btn.disabled, .user-toolbar .toolbar-btn.disabled:hover";
-var accentClassesBorder = ".inp_search, .noMessagesInfo, .inp_slider_custom, .content, .message-box, #keyboard, .advAvtrProfName, .advAvtrProfSave, .advAvtrProfDelete, .filter-option, .inp_dropdown, .toolbar-btn-double, .toolbar-btn, .toolbar, .content-btn, .action-btn, .content-avatar-functions, .content-panic, .content-debug, .content-shortcuts ,.content-feed, .content-call, .inp_toggle, .imperialDisplay, .inp_btn_action, .inp_button, .inp_slider, .content-cell, .content-world-information, .content-world-actions, .content-world-author, .content-world-author-worlds, .content-world-instances, .content-world-intancing, .world-instance, .close-btn, .content-instance-owner, .content-instance-world, .content-instance-information, .content-instance-buttons, .content-instance-players, .user-sidebar, .user-settings-dialog, .user-toolbar, .tab-contents,#tab-content-activity .player-instance-rules, .activityDataUnavailableInfo, .tab-btn, #tab-content-activity .player-instance-players, .avatar-sidebar, .avatar-maininformation, .avatar-toolbar, .favorite-category-selection, .valueList";
+var accentClassesBorder = ".support-code-display, .inp_search, .noMessagesInfo, .inp_slider_custom, .content, .message-box, #keyboard, .advAvtrProfName, .advAvtrProfSave, .advAvtrProfDelete, .filter-option, .inp_dropdown, .toolbar-btn-double, .toolbar-btn, .toolbar, .content-btn, .action-btn, .content-avatar-functions, .content-panic, .content-debug, .content-shortcuts ,.content-feed, .content-call, .inp_toggle, .imperialDisplay, .inp_btn_action, .inp_button, .inp_slider, .content-cell, .content-world-information, .content-world-actions, .content-world-author, .content-world-author-worlds, .content-world-instances, .content-world-intancing, .world-instance, .close-btn, .content-instance-owner, .content-instance-world, .content-instance-information, .content-instance-buttons, .content-instance-players, .user-sidebar, .user-settings-dialog, .user-toolbar, .tab-contents,#tab-content-activity .player-instance-rules, .activityDataUnavailableInfo, .tab-btn, #tab-content-activity .player-instance-players, .avatar-sidebar, .avatar-maininformation, .avatar-toolbar, .favorite-category-selection, .valueList";
 var accentClassesBorderTop = ".keyboard-row + .keyboard-row, .valueList .listValue + .listValue";
 var accentClassesBorderLeft = ".list-content, .content-instance-buttons .instance-btn + .instance-btn, .keyboard-key + .keyboard-key, .keyboard-key + .keyboard-mod, .keyboard-key + .keyboard-func, .keyboard-mod + .keyboard-key, .keyboard-mod + .keyboard-mod, .keyboard-mod + .keyboard-func, .keyboard-func + .keyboard-key, .keyboard-func + .keyboard-mod, .keyboard-func + .keyboard-func";
 var specialClasses = ".inp_slider .valueBar, .inp_toggle.checked, .inp_slider_custom .valueBar";
 var highlightClasses = ".keyboard-key:hover, .keyboard-mod:hover, .keyboard-func:hover, .keyboard-key.active, .keyboard-mod.active, .keyboard-func.active, .advAvtrProfName:hover, .advAvtrProfSave:hover, .advAvtrProfDelete:hover, .filter-option.active, .filter-option:hover, .content-btn:hover, .toolbar-btn:hover, .toolbar-btn.active, .action-btn:hover, .close-btn:hover, .avatar-toolbar .toolbar-btn:hover, .user-toolbar .toolbar-btn:hover, .content-instance-buttons .instance-btn:hover, .inp_dropdown .valueList .listValue:hover, .inp_dropdown:hover";
+var textClasses = "h1, h2, h3, div, p, a, div.toolbar-btn, .list-filter h1, .inp_slider .valueLabel, .inp_search, .inp_button, .imperialDisplay, .valueLabel, .inp_slider_custom .valueLabel";
 
-
+var sheet1 = document.createElement('style')
+var sheet2 = document.createElement('style')
+var sheet3 = document.createElement('style')
+var sheet4 = document.createElement('style')
+document.body.appendChild(sheet1);
+document.body.appendChild(sheet2);
+document.body.appendChild(sheet3);
+document.body.appendChild(sheet4);
 
 
 function inp_slider_custom(_obj){
@@ -75,8 +83,6 @@ function inp_slider_custom(_obj){
                     document.styleSheets[1].insertRule(backgroundClasses+"{background-color: rgba("+red+","+green+","+blue+","+alpha/255+") !important}");
                     document.styleSheets[1].insertRule(backgroundClassesDisabled+"{background-color: rgba("+(red-50)+","+(green-50)+","+(blue-50)+","+alpha/255+") !important}");
 
-
-
                     // document.styleSheets[1].cssRules[0].style.backgroundColor = "rgba("+red+","+green+","+blue+","+alpha/255+")";
                 break;
                 case "ACColor":
@@ -93,6 +99,12 @@ function inp_slider_custom(_obj){
                     }
                     document.styleSheets[3].insertRule(highlightClasses+"{background-color: rgba("+red+","+green+","+blue+","+alpha/255+") !important}");
                     document.styleSheets[3].insertRule(specialClasses+"{background-color: rgba("+red+","+green+","+blue+","+alpha/255+") !important}");
+                break;
+                case "TXColor":
+                    for (let i = 0; i < document.styleSheets[4].cssRules.length; i++) {
+                        document.styleSheets[4].deleteRule(i);
+                    }
+                    document.styleSheets[4].insertRule(textClasses+"{color: rgba("+red+","+green+","+blue+","+alpha/255+") !important}");
                 break;
             }
         }
@@ -172,7 +184,8 @@ function inp_slider_custom(_obj){
     return {
       name: this.name,
       value: this.getValue,
-      updateValue: this.updateValue
+      updateValue: this.updateValue,
+      updatePreview: this.UpdatePreview
     }
 }
 
@@ -192,16 +205,16 @@ var list = document.getElementById("settings").getElementsByClassName("list-filt
 
 list.insertBefore(newItem.firstChild,list.childNodes[0]);
 
-var sheet1 = document.createElement('style')
-var sheet2 = document.createElement('style')
-var sheet3 = document.createElement('style')
-document.body.appendChild(sheet1);
-document.body.appendChild(sheet2);
-document.body.appendChild(sheet3);
 
 
-cvr("#settings .list-content").addHTML("<div id=\"settings-dasui\" class=\"settings-categorie\"><div class=\"row-wrapper\" style='margin-bottom:50px'>\r\n                            <div class=\"option-caption\">Background Color:</div>\r\n                                <div class=\"option-input\">\r\n                                    <div id=\"CVR_PREV_BGColor\" class=\"color-preview\" data-r=\"100\" data-g=\"100\" data-b=\"100\" data-a=\"255\"  style=\"background-color: rgba(100,100,100,1);\"></div>\r\n                                    <div id=\"CVR_BGColor-r\" class=\"inp_slider_custom color\" data-caption=\"Red: \" data-type=\"dasui\" data-min=\"0\" data-max=\"255\" data-current=\"100\" data-saveOnChange=\"true\"></div>\r\n                                    <div id=\"CVR_BGColor-g\" class=\"inp_slider_custom color\" data-caption=\"Green: \" data-type=\"dasui\" data-min=\"0\" data-max=\"255\" data-current=\"100\" data-saveOnChange=\"true\"></div>\r\n                                    <div id=\"CVR_BGColor-b\" class=\"inp_slider_custom color\" data-caption=\"Blue: \" data-type=\"dasui\" data-min=\"0\" data-max=\"255\" data-current=\"100\" data-saveOnChange=\"true\"></div>\r\n                                    <div id=\"CVR_BGColor-a\" class=\"inp_slider_custom color\" data-caption=\"Alpha: \" data-type=\"dasui\" data-min=\"0\" data-max=\"255\" data-current=\"100\" data-saveOnChange=\"true\"></div>\r\n                                </div>\r\n                        </div>\r\n                        <div class=\"row-wrapper\" style='margin-bottom:50px'>\r\n                            <div class=\"option-caption\">Highlight Color:</div>\r\n                                <div class=\"option-input\">\r\n                                    <div id=\"CVR_PREV_HLColor\" class=\"color-preview\" data-r=\"100\" data-g=\"100\" data-b=\"100\" data-a=\"255\"  style=\"background-color: rgba(100,100,100,1);\"></div>\r\n                                    <div id=\"CVR_HLColor-r\" class=\"inp_slider_custom color\" data-caption=\"Red: \" data-type=\"dasui\" data-min=\"0\" data-max=\"255\" data-current=\"100\" data-saveOnChange=\"true\"></div>\r\n                                    <div id=\"CVR_HLColor-g\" class=\"inp_slider_custom color\" data-caption=\"Green: \" data-type=\"dasui\" data-min=\"0\" data-max=\"255\" data-current=\"100\" data-saveOnChange=\"true\"></div>\r\n                                    <div id=\"CVR_HLColor-b\" class=\"inp_slider_custom color\" data-caption=\"Blue: \" data-type=\"dasui\" data-min=\"0\" data-max=\"255\" data-current=\"100\" data-saveOnChange=\"true\"></div>\r\n                                    <div id=\"CVR_HLColor-a\" class=\"inp_slider_custom color\" data-caption=\"Alpha: \" data-type=\"dasui\" data-min=\"0\" data-max=\"255\" data-current=\"100\" data-saveOnChange=\"true\"></div>\r\n                                </div>\r\n                        </div>\r\n                        <div class=\"row-wrapper\">\r\n                            <div class=\"option-caption\">Border Color:</div>\r\n                                <div class=\"option-input\">\r\n                                    <div id=\"CVR_PREV_ACColor\" class=\"color-preview\" data-r=\"100\" data-g=\"100\" data-b=\"100\" data-a=\"255\"  style=\"background-color: rgba(100,100,100,1);\"></div>\r\n                                    <div id=\"CVR_ACColor-r\" class=\"inp_slider_custom color\" data-caption=\"Red: \" data-type=\"dasui\" data-min=\"0\" data-max=\"255\" data-current=\"100\" data-saveOnChange=\"true\"></div>\r\n                                    <div id=\"CVR_ACColor-g\" class=\"inp_slider_custom color\" data-caption=\"Green: \" data-type=\"dasui\" data-min=\"0\" data-max=\"255\" data-current=\"100\" data-saveOnChange=\"true\"></div>\r\n                                    <div id=\"CVR_ACColor-b\" class=\"inp_slider_custom color\" data-caption=\"Blue: \" data-type=\"dasui\" data-min=\"0\" data-max=\"255\" data-current=\"100\" data-saveOnChange=\"true\"></div>\r\n                                    <div id=\"CVR_ACColor-a\" class=\"inp_slider_custom color\" data-caption=\"Alpha: \" data-type=\"dasui\" data-min=\"0\" data-max=\"255\" data-current=\"100\" data-saveOnChange=\"true\"></div>\r\n                                </div>\r\n                        </div>\r\n                    </div>")
 
+cvr("#settings .list-content").addHTML(""
+    +"<div id=\"settings-dasui\" class=\"settings-categorie\">"
+    +"<div class=\"row-wrapper\" style='margin-bottom:50px'>\r\n                            <div class=\"option-caption\">Background Color:</div>\r\n                                <div class=\"option-input\">\r\n                                    <div id=\"CVR_PREV_BGColor\" class=\"color-preview\" data-r=\"100\" data-g=\"100\" data-b=\"100\" data-a=\"255\"  style=\"background-color: rgba(100,100,100,1);\"></div>\r\n                                    <div id=\"CVR_BGColor-r\" class=\"inp_slider_custom color\" data-caption=\"Red: \" data-type=\"dasui\" data-min=\"0\" data-max=\"255\" data-current=\"100\" data-saveOnChange=\"true\"></div>\r\n                                    <div id=\"CVR_BGColor-g\" class=\"inp_slider_custom color\" data-caption=\"Green: \" data-type=\"dasui\" data-min=\"0\" data-max=\"255\" data-current=\"100\" data-saveOnChange=\"true\"></div>\r\n                                    <div id=\"CVR_BGColor-b\" class=\"inp_slider_custom color\" data-caption=\"Blue: \" data-type=\"dasui\" data-min=\"0\" data-max=\"255\" data-current=\"100\" data-saveOnChange=\"true\"></div>\r\n                                    <div id=\"CVR_BGColor-a\" class=\"inp_slider_custom color\" data-caption=\"Alpha: \" data-type=\"dasui\" data-min=\"0\" data-max=\"255\" data-current=\"100\" data-saveOnChange=\"true\"></div></div></div>"
+    +"<div class=\"row-wrapper\" style='margin-bottom:50px'>\r\n                            <div class=\"option-caption\">Highlight Color:</div>\r\n                                <div class=\"option-input\">\r\n                                    <div id=\"CVR_PREV_HLColor\" class=\"color-preview\" data-r=\"100\" data-g=\"100\" data-b=\"100\" data-a=\"255\"  style=\"background-color: rgba(100,100,100,1);\"></div>\r\n                                    <div id=\"CVR_HLColor-r\" class=\"inp_slider_custom color\" data-caption=\"Red: \" data-type=\"dasui\" data-min=\"0\" data-max=\"255\" data-current=\"100\" data-saveOnChange=\"true\"></div>\r\n                                    <div id=\"CVR_HLColor-g\" class=\"inp_slider_custom color\" data-caption=\"Green: \" data-type=\"dasui\" data-min=\"0\" data-max=\"255\" data-current=\"100\" data-saveOnChange=\"true\"></div>\r\n                                    <div id=\"CVR_HLColor-b\" class=\"inp_slider_custom color\" data-caption=\"Blue: \" data-type=\"dasui\" data-min=\"0\" data-max=\"255\" data-current=\"100\" data-saveOnChange=\"true\"></div>\r\n                                    <div id=\"CVR_HLColor-a\" class=\"inp_slider_custom color\" data-caption=\"Alpha: \" data-type=\"dasui\" data-min=\"0\" data-max=\"255\" data-current=\"100\" data-saveOnChange=\"true\"></div></div></div>"
+    +"<div class=\"row-wrapper\" style='margin-bottom:50px'>\r\n                            <div class=\"option-caption\">Border Color:</div>\r\n                                <div class=\"option-input\">\r\n                                    <div id=\"CVR_PREV_ACColor\" class=\"color-preview\" data-r=\"100\" data-g=\"100\" data-b=\"100\" data-a=\"255\"  style=\"background-color: rgba(100,100,100,1);\"></div>\r\n                                    <div id=\"CVR_ACColor-r\" class=\"inp_slider_custom color\" data-caption=\"Red: \" data-type=\"dasui\" data-min=\"0\" data-max=\"255\" data-current=\"100\" data-saveOnChange=\"true\"></div>\r\n                                    <div id=\"CVR_ACColor-g\" class=\"inp_slider_custom color\" data-caption=\"Green: \" data-type=\"dasui\" data-min=\"0\" data-max=\"255\" data-current=\"100\" data-saveOnChange=\"true\"></div>\r\n                                    <div id=\"CVR_ACColor-b\" class=\"inp_slider_custom color\" data-caption=\"Blue: \" data-type=\"dasui\" data-min=\"0\" data-max=\"255\" data-current=\"100\" data-saveOnChange=\"true\"></div>\r\n                                    <div id=\"CVR_ACColor-a\" class=\"inp_slider_custom color\" data-caption=\"Alpha: \" data-type=\"dasui\" data-min=\"0\" data-max=\"255\" data-current=\"100\" data-saveOnChange=\"true\"></div></div></div>"
+    +"<div class=\"row-wrapper\">\r\n                            <div class=\"option-caption\">Text Color:</div>\r\n                                <div class=\"option-input\">\r\n                                    <div id=\"CVR_PREV_TXColor\" class=\"color-preview\" data-r=\"100\" data-g=\"100\" data-b=\"100\" data-a=\"255\"  style=\"background-color: rgba(100,100,100,1);\"></div>\r\n                                    <div id=\"CVR_TXColor-r\" class=\"inp_slider_custom color\" data-caption=\"Red: \" data-type=\"dasui\" data-min=\"0\" data-max=\"255\" data-current=\"100\" data-saveOnChange=\"true\"></div>\r\n                                    <div id=\"CVR_TXColor-g\" class=\"inp_slider_custom color\" data-caption=\"Green: \" data-type=\"dasui\" data-min=\"0\" data-max=\"255\" data-current=\"100\" data-saveOnChange=\"true\"></div>\r\n                                    <div id=\"CVR_TXColor-b\" class=\"inp_slider_custom color\" data-caption=\"Blue: \" data-type=\"dasui\" data-min=\"0\" data-max=\"255\" data-current=\"100\" data-saveOnChange=\"true\"></div>\r\n                                    <div id=\"CVR_TXColor-a\" class=\"inp_slider_custom color\" data-caption=\"Alpha: \" data-type=\"dasui\" data-min=\"0\" data-max=\"255\" data-current=\"100\" data-saveOnChange=\"true\"></div></div></div></div>");
+console.log("added");
 var fixed = false;
 
 updateGameSettingsValue = function(_name, _value){
@@ -215,9 +228,11 @@ updateGameSettingsValue = function(_name, _value){
 
         var sliderinos = document.querySelectorAll('.inp_slider_custom');
         for(var i = 0; i < sliderinos.length; i++){
-            settings[settings.length] = new inp_slider_custom(sliderinos[i]);
+            var slid = new inp_slider_custom(sliderinos[i]);
+            settings[settings.length] = slid;
         }
     }
 }
-
 updateGameSettingsValue("GeneralClockFormat",game_settings["GeneralClockFormat"]);
+setTimeout(()=>updateGameSettingsValue("GeneralClockFormat",game_settings["GeneralClockFormat"]),100);
+
