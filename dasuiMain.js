@@ -256,6 +256,18 @@ var dasuiStyles = document.createElement('script');
 dasuiStyles.setAttribute('src','dasuiStyles.js');
 document.head.appendChild(dasuiStyles);
 
+
+engine.on('CVRAppShinModInstalled', function () {
+    var dasuiVideo = document.createElement('script');
+    dasuiVideo.setAttribute('src','dasuiVideo.js');
+    document.head.appendChild(dasuiVideo);
+});
+
+
+engine.call('CVRAppShinModInstalled');
+
+
+
 var elements = document.querySelectorAll('link[rel=stylesheet]');
 for(var i=0;i<elements.length;i++){
     elements[i].parentNode.removeChild(elements[i]);
