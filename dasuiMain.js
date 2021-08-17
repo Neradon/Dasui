@@ -286,7 +286,7 @@ if (!document.getElementById(cssId))
     head.appendChild(link);
 }
 
-document.styleSheets[0].insertRule(".time-display {margin-top: 0.35em !important;font-size: 2.5em !important;}")
+document.styleSheets[0].insertRule(".time-display {margin-top: 0.35em !important;font-size: 2.4em !important;}")
 
 }
   
@@ -413,4 +413,7 @@ function mousedowntest(e){
 
 
 // #endregion
+
+
+
 
