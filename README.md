@@ -10,11 +10,13 @@ https://store.steampowered.com/app/661130/ChilloutVR
 This version only supports the gameversion "2021r160 EV2"!
 
 # Installation
+
 ## 1. Method
-Download this repo by clicking on Code->"Download Zip" and put all the files in the zip in your ChilloutVR game folder under "ChilloutVR_Data\StreamingAssets\Cohtml\UIResources\CVRTest". Replace the existing files there with the new ones. (Example path where do put the files: "D:\Steamgames\steamapps\common\ChilloutVR\ChilloutVR_Data\StreamingAssets\Cohtml\UIResources\CVRTest")
+Use the automatic installer from Milchzocker found [Here](https://github.com/MilchZocker/ChilloutVR-Dark-UI/releases/latest)
 
 ## 2. Method
-Use the automatic installer from Milchzocker found [Here](https://github.com/MilchZocker/ChilloutVR-Dark-UI/releases/latest)
+Download this repo by clicking on Code->"Download Zip" and put all the files in the zip in your ChilloutVR game folder under "ChilloutVR_Data\StreamingAssets\Cohtml\UIResources\CVRTest". Replace the existing files there with the new ones. (Example path where do put the files: "D:\Steamgames\steamapps\common\ChilloutVR\ChilloutVR_Data\StreamingAssets\Cohtml\UIResources\CVRTest")
+
 
 # UI Changes
 UI Color can be customized ingame
@@ -34,6 +36,9 @@ Local world search functionality: Search the currently filtered worlds by name. 
 For custom background image, place the image with the filename "background.png" next to your dasui.css file.
 (Folder should be this  "ChilloutVR\ChilloutVR_Data\StreamingAssets\Cohtml\UIResources\CVRTest")
 ![Custom Backgroundimage](https://i.imgur.com/hcu7Y12.jpg)
+
+
+Support for DjShinters VideoRemote which can be found here: https://github.com/DjShinter/VideoRemote
 
 # FEEDBACK
 If you found a bug or have a good idea for the UI, feel free to use the issues system on github or contact me on discord (Neradon#2898) 
