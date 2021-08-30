@@ -256,7 +256,6 @@ var dasuiStyles = document.createElement('script');
 dasuiStyles.setAttribute('src','dasuiStyles.js');
 document.head.appendChild(dasuiStyles);
 
-
 engine.on('CVRAppShinModInstalled', function () {
     var dasuiVideo = document.createElement('script');
     dasuiVideo.setAttribute('src','dasuiVideo.js');
@@ -344,9 +343,9 @@ function RemoveFromCustomArray(_key,_value){
 		if(parsed[_key] === undefined){
 			parsed[_key] = [];
 		}
-		if(parsed[_key].some(x=>x.Guid === _value.Guid)){
+		if(parsed[_key].some(x=>x.WorldId === _value.WorldId)){
 			parsed[_key] = parsed[_key].filter(function(ele){
-				return ele.Guid != _value.Guid;
+				return ele.WorldId !== _value.WorldId;
 			});
 		}
 		game_settings["GeneralClockFormat"] = JSON.stringify(parsed);
@@ -413,7 +412,5 @@ function mousedowntest(e){
 
 
 // #endregion
-
-
 
 
