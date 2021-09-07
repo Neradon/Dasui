@@ -2,7 +2,7 @@
 
 var gameVersion = "-1";
 
-var dasuiVersion = "2021r160 EV2";
+var dasuiVersion = ["2021r160 EV2","2021r161 Experimental 1"];
 
 var compatible = false;
 
@@ -12,7 +12,7 @@ var checkedVersion = false;
 engine.on('UpdateGameDebugInformation', function(_info){
     if(checkedVersion == false){
         gameVersion = _info.Version.trim();
-        if(gameVersion == dasuiVersion){
+        if(dasuiVersion.includes(gameVersion)){
             compatible = true;
             initStuff();
         }
@@ -255,6 +255,11 @@ document.head.appendChild(dasuiWorlds);
 var dasuiStyles = document.createElement('script');
 dasuiStyles.setAttribute('src','dasuiStyles.js');
 document.head.appendChild(dasuiStyles);
+
+// var dasuiTest = document.createElement('script');
+// dasuiTest.setAttribute('src','dasuiLanguage.js');
+// document.head.appendChild(dasuiTest);
+
 
 engine.on('CVRAppShinModInstalled', function () {
     var dasuiVideo = document.createElement('script');
