@@ -2,7 +2,7 @@
 
 var gameVersion = "-1";
 
-var dasuiVersion = ["2021r160 EV2","2021r161 Experimental 1"];
+var dasuiVersion = ["2021r161","2021r161 Experimental 1"];
 
 var compatible = false;
 
@@ -381,7 +381,6 @@ function GetCustomArray(_key){
 	}
 }
 
-
 function GetFromCustom(_key){
 	if(isJson(game_settings['GeneralClockFormat'])){
 		var parsed = JSON.parse(game_settings["GeneralClockFormat"]);
@@ -389,14 +388,14 @@ function GetFromCustom(_key){
 			parsed = {timeformat:24};
 		}
 		if(parsed[_key] === undefined){
-			return "100";
+			return "-1";
 		}
 		return parsed[_key];
 	}
 	else{
 		var testpog = {timeformat:24};
 		game_settings["GeneralClockFormat"] = JSON.stringify(testpog);
-		return "100";
+        return "-1";
 	}
 }
 

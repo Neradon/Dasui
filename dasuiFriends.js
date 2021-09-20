@@ -32,13 +32,6 @@ renderFriends = function(_list){
     var html = '<div class="flex-list">';
 
     for(var i=0; _list[i]; i++){
-        // if(i%5 === 0){
-        //     if(i !== 0){
-        //         html += '</div>';
-        //     }
-        //     html += '<div class="content-row">';
-        // }
-
         html += '<div data-id="'+_list[i].UserId+'" class="content-cell friend" onclick="getUserDetailsNew(\''+_list[i].UserId+'\',event);" onmousedown="mousedowntest(event);"><div class="content-cell-formatter"></div>'+
                 '<div class="content-cell-content"><div class="online-state-test '+(_list[i].UserIsOnline?'online':'offline')+' '+_list[i].FilterTags+'">'+
                 '<img class="content-image online-state-image '+(_list[i].UserIsOnline?'online':'offline')+'" src="'+
@@ -114,3 +107,4 @@ function getUserDetailsNew(_uid,e){
         );
     }
 }
+

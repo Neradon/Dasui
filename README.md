@@ -5,7 +5,7 @@ https://store.steampowered.com/app/661130/ChilloutVR
 
 
 # WARNING
-This version supports the gameversion "2021r160 EV2" and "2021r161 Experimental 1"!
+This version supports the gameversion "2021r161" and "2021r161 Experimental 1"!
 
 # Installation
 
