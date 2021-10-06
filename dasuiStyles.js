@@ -1,6 +1,6 @@
 
 
-var backgroundClasses = ".btn-region .region-select, .world-instancing, .user-settings-dialog, .content, .toolbar, #world-detail, #instance-detail, #user-detail, #avatar-detail, #avatar-settings, #keyboard, #numpad, #alert, #alertTimed, #confirm, #loading, #push, .tab-contents, .valueList";
+var backgroundClasses = ".btn-region .region-select, .world-instancing, .user-settings-dialog, .content, .toolbar, #world-detail, #instance-detail, #user-detail, #avatar-detail, #avatar-settings, #keyboard, #numpad, #alert, #alertTimed, #confirm, #loading, #push, .valueList";
 var backgroundClassesDisabled = ".world-instancing .content-btn.disabled, .world-instancing .content-btn.disabled:hover, .content-instance-buttons .instance-btn.disabled, .world-instancing .content-btn.disabled:hover, .world-instancing .content-btn.disabled:hover, .avatar-toolbar .toolbar-btn.disabled, .avatar-toolbar .toolbar-btn.disabled:hover, .user-toolbar .toolbar-btn.disabled, .user-toolbar .toolbar-btn.disabled:hover";
 var accentClassesBorder = ".world-instancing, .support-code-display, .inp_search, .noMessagesInfo, .inp_slider_custom, .content, .message-box, #keyboard, .advAvtrProfName, .advAvtrProfSave, .advAvtrProfDelete, .filter-option, .inp_dropdown, .toolbar-btn-double, .toolbar-btn, .toolbar, .content-btn, .action-btn, .content-avatar-functions, .content-panic, .content-debug, .content-shortcuts ,.content-feed, .content-call, .inp_toggle, .imperialDisplay, .inp_btn_action, .inp_button, .inp_slider, .content-cell, .content-world-information, .content-world-actions, .content-world-author, .content-world-author-worlds, .content-world-instances, .content-world-intancing, .world-instance, .close-btn, .content-instance-owner, .content-instance-world, .content-instance-information, .content-instance-buttons, .content-instance-players, .user-sidebar, .user-settings-dialog, .user-toolbar, .tab-contents,#tab-content-activity .player-instance-rules, .activityDataUnavailableInfo, .tab-btn, #tab-content-activity .player-instance-players, .avatar-sidebar, .avatar-maininformation, .avatar-toolbar, .favorite-category-selection, .valueList";
 var accentClassesBorderTop = ".keyboard-row + .keyboard-row, .valueList .listValue + .listValue";
@@ -244,6 +244,7 @@ document.styleSheets[0].insertRule(".inp_slider .valueLabel{ color: white !impor
 document.styleSheets[0].insertRule(".toolbar-btn + .toolbar-btn { border-left: 0px solid #59885d !important; } ");
 document.styleSheets[0].insertRule(".content { background: top / 2560px 1440px no-repeat url('coui://UIResources/CVRTest/background.png');  }");
 document.styleSheets[0].insertRule(".toolbar { background: bottom / 2560px 1440px no-repeat url('coui://UIResources/CVRTest/background.png'); } ");
+document.styleSheets[0].insertRule(".tab-contents {background-color: rgba(0,0,0,0) !important} ");
 // document.styleSheets[0].insertRule("");
 
 var newItem = document.createElement("div");
