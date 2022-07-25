@@ -1,65 +1,60 @@
 loadFriends = function(_list){
-	onlineFriends = _list.filter(function(a){
-		return a.UserIsOnline === true;
-	});
-	
-	offlineFriends = _list.filter(function(a){
-		return a.UserIsOnline === false;
-	});
-		 
-    onlineFriends.sort(function(a, b){
-		return a.UserName.toLowerCase().localeCompare(b.UserName.toLowerCase());
-    });
-	
-	offlineFriends.sort(function(a, b){
-		return a.UserName.toLowerCase().localeCompare(b.UserName.toLowerCase());
-    });
-	
-
-	friendList = onlineFriends.concat(offlineFriends);
-
+    friendList = _list;
         
     for (var i=0; i < friendList.length; i++){
         friendList[i].FilterTags += ','+(friendList[i].UserIsOnline?'frndonline':'frndoffline');
     }
-
-    renderFriends(friendList);
+    
+    renderFriends(_list);
+    filterFriendList("frndonline")
 }
 
-renderFriends = function(_list){
-    var contentList = document.querySelector('#friends .list-content');
+// renderFriends = function(_list){
+//     var contentList = document.querySelector('#friends .list-content');
 
-    var html = '<div class="flex-list">';
+//     /*
+//     var html = '<div class="flex-list">';
 
-    for(var i=0; _list[i]; i++){
-        html += '<div data-id="'+_list[i].UserId+'" class="content-cell friend" onclick="getUserDetailsNew(\''+_list[i].UserId+'\',event);" onmousedown="mousedowntest(event);"><div class="content-cell-formatter"></div>'+
-                '<div class="content-cell-content"><div class="online-state-test '+(_list[i].UserIsOnline?'online':'offline')+' '+_list[i].FilterTags+'">'+
-                '<img class="content-image online-state-image '+(_list[i].UserIsOnline?'online':'offline')+'" src="'+
-                _list[i].UserImageUrl+'"></div><div class="content-name">'+
-                _list[i].UserName.makeSafe()+'</div></div>'+
-                '</div>';
-    }
+//     for(var i=0; _list[i]; i++){
+//         html += '<div data-id="'+_list[i].UserId+'" class="content-cell friend" onclick="getUserDetailsNew(\''+_list[i].UserId+'\',event);" onmousedown="mousedowntest(event);"><div class="content-cell-formatter"></div>'+
+//                 '<div class="content-cell-content"><div class="online-state-test '+(_list[i].UserIsOnline?'online':'offline')+' '+_list[i].FilterTags+'">'+
+//                 '<img class="content-image online-state-image '+(_list[i].UserIsOnline?'online':'offline')+'" src="'+
+//                 _list[i].UserImageUrl+'"></div><div class="content-name">'+
+//                 _list[i].UserName.makeSafe()+'</div></div>'+
+//                 '</div>';
+//     }
 
-    html += '</div>';
+//     html += '</div>';
 
-    contentList.innerHTML = html;
-}
+//     contentList.innerHTML = html;
+//     */
+//     for(var i=0; _list[i]; i++){
+//         if (cvr('#friends .list-content .flex-list #frnd_'+_list[i].UserId+'').length == 0){
+//             AddFriend(_list[i]);
+//         } else {
+//             UpdateFriend(_list[i]);
+//         }
+//     }
+// }
 
 UpdateFriend = function(_friend){
-    cvr('#friends .list-content .flex-list [data-id="'+_friend.UserId+'"] .online-state-test').className('online-state-test '+(_friend.UserIsOnline?'online':'offline')+' '+_friend.FilterTags);
-    cvr('#friends .list-content .flex-list [data-id="'+_friend.UserId+'"] .online-state-image').className('online-state-image '+(_friend.UserIsOnline?'online':'offline')+' '+_friend.FilterTags);
-    cvr('#friends .list-content .flex-list [data-id="'+_friend.UserId+'"] .content-image').attr('src', _friend.UserImageUrl);
-    cvr('#friends .list-content .flex-list [data-id="'+_friend.UserId+'"] .content-name').innerHTML(_friend.UserName.makeSafe());
+    cvr('#friends .list-content .flex-list #frnd_'+_friend.UserId).className('content-cell friend '+(_friend.UserIsOnline?'frndonline':'frndoffline'));
+    cvr('#friends .list-content .flex-list #frnd_'+_friend.UserId+' .online-state').className('online-state '+(_friend.UserIsOnline?'online':'offline')+' '+_friend.FilterTags);
+    if (cvr('#friends .list-content .flex-list #frnd_'+_friend.UserId+' .content-image').first().getAttribute('src') != _friend.UserImageUrl) {
+        cvr('#friends .list-content .flex-list #frnd_' + _friend.UserId + ' .content-image').attr('src', _friend.UserImageUrl);
+    }
+    cvr('#friends .list-content .flex-list #frnd_'+_friend.UserId+' .content-name').innerHTML(_friend.UserName.makeSafe());
 }
 
 AddFriend = function(_friend){
-
-    var html = '<div data-id="'+_list[i].UserId+'" class="content-cell friend" onclick="getUserDetailsNew(\''+_list[i].UserId+'\',event);" onmousedown="mousedowntest(event);"><div class="content-cell-formatter"></div>'+
-    '<div class="content-cell-content"><div class="online-state-test '+(_list[i].UserIsOnline?'online':'offline')+' '+_list[i].FilterTags+'">'+
-    '<img class="content-image online-state-image '+(_list[i].UserIsOnline?'online':'offline')+'" src="'+
-    _list[i].UserImageUrl+'"></div><div class="content-name">'+
-    _list[i].UserName.makeSafe()+'</div></div>'+
-    '</div>';
+    var html = 
+        '<div id="frnd_'+_friend.UserId+'" class="content-cell friend '+(_friend.UserIsOnline?'frndonline':'frndoffline')+'" onclick="getUserDetailsNew(\''+_friend.UserId+'\',event);" onmousedown="mousedowntest(event);">'+
+        '<div class="content-cell-formatter"></div>'+
+        '<div class="content-cell-content"><div class="online-state-test '+(_friend.UserIsOnline?'online':'offline')+' '+_friend.FilterTags+'"></div>'+
+        '<img class="content-image online-state-image '+(_friend.UserIsOnline?'online':'offline')+'" src="'+
+        _friend.UserImageUrl+'"><div class="content-name">'+
+        _friend.UserName.makeSafe()+'</div>'+
+        '</div></div>';
     
     cvr('#friends .list-content .flex-list').addHTML(html);
 }
@@ -74,11 +69,12 @@ document.styleSheets[0].insertRule(".friend .online-state-test.online { box-shad
 document.styleSheets[0].insertRule(".friend .online-state-test.offline { box-shadow: 0px 0px 20px 10px #cc0000 !important; }");
 document.styleSheets[0].insertRule(".friend .online-state-image.offline { filter: grayscale(100%) !important; }");
 document.styleSheets[0].insertRule(".friend .content-name{ left: -6% !important; bottom: -6% !important; width: 112% !important; height: 2em !important; /* background-color: rgba(150,150,150,0.8); */ line-height:2em !important; }");
-document.styleSheets[0].insertRule(".friend .content-image{ position: unset !important; width: 100% !important; height: 100% !important; bottom: unset !important; top: unset !important; border-radius: unset !important; }");
+document.styleSheets[0].insertRule(".friend .content-image{ position: unset !important; width: 100% !important; height: 83% !important; bottom: unset !important; top: unset !important; border-radius: unset !important; }");
 
 
 
 function getUserDetailsNew(_uid,e){
+    console.log("Clickedy")
 	var dif = {x:0,y:0};
 	dif.x = e.clientX - mousedownlocation.x;
 	dif.y = e.clientY - mousedownlocation.y;
@@ -91,20 +87,8 @@ function getUserDetailsNew(_uid,e){
 	mousedownlocation = {x:0,y:0};
 	
     engine.call('CVRAppCallGetUserDetails', _uid);
-    if(debug){
-        loadUserDetails(
-            {Guid: 'AAAA', OnlineState: false,  PlayerImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser',
-             IsFriend: true, IsBlocked: false, IsMuted: false},
-            {WorldImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', WorldName: 'Testworld', GameMode: 'Social', MaxPlayer: 64,
-             CurrentPlayer: 4, IsInPrivateLobby: false},
-            [{Guid: 'AAAA', OnlineState: true,  UserImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', UserName: 'Testuser'},
-             {Guid: 'AAAA', OnlineState: true,  UserImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', UserName: 'Testuser'},
-             {Guid: 'AAAA', OnlineState: true,  UserImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', UserName: 'Testuser'},
-             {Guid: 'AAAA', OnlineState: true,  UserImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', UserName: 'Testuser'},
-             {Guid: 'AAAA', OnlineState: true,  UserImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', UserName: 'Testuser'},
-             {Guid: 'AAAA', OnlineState: true,  UserImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', UserName: 'Testuser'},
-             {Guid: 'AAAA', OnlineState: true,  UserImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', UserName: 'Testuser'}]
-        );
-    }
 }
 
+
+
+console.log("Loaded friends");

@@ -9,7 +9,7 @@
         <div class="wrapper">
 
             <div id="home" class="content in">
-                <h1>Welcome to ChilloutVR Experimental</h1>
+                <h1>Welcome to ChilloutVR</h1>
 
                 <div class="content-shortcuts">
                     <div class="content-caption">Shortcuts</div>
@@ -65,6 +65,7 @@
                         <div class="cell-name">Version: </div>
                         <div class="cell-value game-debug-version">[Version]</div>
                     </div>
+
                 </div>
 
                 <div class="content-feed">
@@ -127,7 +128,9 @@
                     <div class="content-btn color-primary second" onclick="refreshFriends();">Refresh</div>
                 </div>
                 <div class="list-content">
-
+                    <div class="flex-list">
+                        
+                    </div>
                 </div>
             </div>
 
@@ -151,7 +154,9 @@
                     <div class="content-btn color-primary second" onclick="refreshAvatars();">Refresh</div>
                 </div>
                 <div class="list-content">
-
+                    <div class="flex-list">
+                        
+                    </div>
                 </div>
             </div>
 
@@ -165,7 +170,9 @@
                     <div class="content-btn color-primary second" onclick="refreshWorlds();">Refresh</div>
                 </div>
                 <div class="list-content">
+                    <div class="flex-list">
 
+                    </div>
                 </div>
             </div>
 
@@ -180,7 +187,11 @@
                     <div class="content-btn first" onclick="filterContent('props', '');">Reset Filters</div>
                     <div class="content-btn color-primary second" onclick="refreshProps();">Refresh</div>
                 </div>
-                <div class="list-content"></div>
+                <div class="list-content">
+                    <div class="flex-list">
+
+                    </div>
+                </div>
             </div>
 
             <div id="messages" class="content hidden">
@@ -277,9 +288,10 @@
                             </div>
                         </div>
                         <div class="row-wrapper">
-                            <div class="option-caption">Enable Head Bobbing:</div>
+                            <div class="option-caption">Head Bobbing:</div>
                             <div class="option-input">
-                                <div id="GeneralHeadBobbing" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
+                                <!--<div id="GeneralHeadBobbing" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>-->
+                                <div id="GeneralHeadBobbingLevel" class="inp_dropdown" data-options="2:Enabled,1:Reduced,0:Disabled" data-current="2" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
@@ -331,9 +343,9 @@
                             </div>
                         </div>
                         <div class="row-wrapper">
-                            <div class="option-caption">Camera Picture location:</div>
+                            <div class="option-caption">Enable Telepathic Grab:</div>
                             <div class="option-input">
-                                <div id="GeneralPhotoDestination" class="inp_dropdown" data-options="0:Game Directory,1:Pictures Directory" data-current="0" data-saveOnChange="true"></div>
+                                <div id="GeneralTelepathicGrip" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
@@ -606,7 +618,7 @@
                         <div class="row-wrapper">
                             <div class="option-caption">Right Stick Digital Deadzone:</div>
                             <div class="option-input">
-                                <div id="ControlEnableRightsStickDigitalDeadZones" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
+                                <div id="ControlEnableRightsStickDigitalDeadZones" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         
@@ -619,7 +631,7 @@
                         <div class="row-wrapper">
                             <div class="option-caption">Use Grip to Grab:</div>
                             <div class="option-input">
-                                <div id="ControlUseGripToGrab" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                                <div id="ControlUseGripToGrab" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
@@ -637,13 +649,19 @@
                         <div class="row-wrapper">
                             <div class="option-caption">Enable Gamepad input:</div>
                             <div class="option-input">
-                                <div id="ControlEnableGamepad" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
+                                <div id="ControlEnableGamepad" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">VR Fast Flight:</div>
                             <div class="option-input">
                                 <div id="ControlVRFastFlight" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                            </div>
+                        </div>
+                        <div class="row-wrapper">
+                            <div class="option-caption">Scale Movement Speed with Avatar Scale:</div>
+                            <div class="option-input">
+                                <div id="ControlEnableMovementScale" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
                             </div>
                         </div>
                     </div>
@@ -669,15 +687,22 @@
                         
                         <div id="content-filter-nsfw-wrapper" style="display: none;">
                             <div class="row-wrapper">
-                                <div class="option-caption">Enable NSFW Content:</div>
+                                <div class="option-caption">Nudity:</div>
                                 <div class="option-input">
-                                    <div id="ContentFilterNSFW" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                                    <div id="ContentFilterNudity" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                                 </div>
                             </div>
                         </div>
                         <div id="content-filter-nsfw-wrapper-notice" style="display: none;">
                             <p>Missing some options? Some options are hidden until you have the free Mature Content Access DLC installed. 
                                 You can install this via the Steam Store.</p>
+                        </div>
+
+                        <div class="row-wrapper">
+                            <div class="option-caption">Suggestive:</div>
+                            <div class="option-input">
+                                <div id="ContentFilterSuggestive" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                            </div>
                         </div>
 
                         <div class="row-wrapper">
@@ -698,6 +723,13 @@
                             <div class="option-caption">Screen Effects:</div>
                             <div class="option-input">
                                 <div id="ContentFilterScreenEffects" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                            </div>
+                        </div>
+
+                        <div class="row-wrapper">
+                            <div class="option-caption">Extremely Bright:</div>
+                            <div class="option-input">
+                                <div id="ContentFilterExtremelyBright" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
@@ -731,6 +763,20 @@
                             </div>
                         </div>
 
+                        <div class="row-wrapper">
+                            <div class="option-caption">Horror:</div>
+                            <div class="option-input">
+                                <div id="ContentFilterHorror" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                            </div>
+                        </div>
+
+                        <div class="row-wrapper">
+                            <div class="option-caption">Jumpscare:</div>
+                            <div class="option-input">
+                                <div id="ContentFilterJumpscare" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                            </div>
+                        </div>
+
                         <h2 style="margin-bottom: 0;">Removables</h2>
                         <p>This options will remove components from the avatar</p>
                         
@@ -745,6 +791,13 @@
                             <div class="option-caption">Long Range Audio:</div>
                             <div class="option-input">
                                 <div id="ContentFilterLongRangeAudio" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                            </div>
+                        </div>
+
+                        <div class="row-wrapper">
+                            <div class="option-caption">Music:</div>
+                            <div class="option-input">
+                                <div id="ContentFilterMusic" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
@@ -824,13 +877,20 @@
 
                         <div id="content-filter-nsfw-wrapper-props" style="display: none;">
                             <div class="row-wrapper">
-                                <div class="option-caption">Enable NSFW Content:</div>
+                                <div class="option-caption">Nudity:</div>
                                 <div class="option-input">
-                                    <div id="ContentFilterPropsNSFW" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                                    <div id="ContentFilterPropsNudity" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                                 </div>
                             </div>
                         </div>
 
+                        <div class="row-wrapper">
+                            <div class="option-caption">Suggestive:</div>
+                            <div class="option-input">
+                                <div id="ContentFilterPropsSuggestive" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                            </div>
+                        </div>
+                        
                         <div class="row-wrapper">
                             <div class="option-caption">Flashing Colors:</div>
                             <div class="option-input">
@@ -849,6 +909,13 @@
                             <div class="option-caption">Screen Effects:</div>
                             <div class="option-input">
                                 <div id="ContentFilterPropsScreenEffects" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                            </div>
+                        </div>
+
+                        <div class="row-wrapper">
+                            <div class="option-caption">Extremely Bright:</div>
+                            <div class="option-input">
+                                <div id="ContentFilterPropsExtremelyBright" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
@@ -882,6 +949,20 @@
                             </div>
                         </div>
 
+                        <div class="row-wrapper">
+                            <div class="option-caption">Horror:</div>
+                            <div class="option-input">
+                                <div id="ContentFilterPropsHorror" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                            </div>
+                        </div>
+
+                        <div class="row-wrapper">
+                            <div class="option-caption">Jumpscare:</div>
+                            <div class="option-input">
+                                <div id="ContentFilterPropsJumpscare" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                            </div>
+                        </div>
+
                         <h2 style="margin-bottom: 0;">Removables</h2>
                         <p>This options will remove components from the avatar</p>
 
@@ -896,6 +977,13 @@
                             <div class="option-caption">Long Range Audio:</div>
                             <div class="option-input">
                                 <div id="ContentFilterPropsLongRangeAudio" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                            </div>
+                        </div>
+
+                        <div class="row-wrapper">
+                            <div class="option-caption">Music:</div>
+                            <div class="option-input">
+                                <div id="ContentFilterPropsMusic" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="2" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
@@ -924,6 +1012,13 @@
                             <div class="option-caption">Cameras:</div>
                             <div class="option-input">
                                 <div id="ContentFilterPropsCameras" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="2" data-saveOnChange="true"></div>
+                            </div>
+                        </div>
+
+                        <div class="row-wrapper">
+                            <div class="option-caption">Video Players:</div>
+                            <div class="option-input">
+                                <div id="ContentFilterPropsVideoPlayers" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="1" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
@@ -1135,7 +1230,23 @@
                                 <div id="IKPreStraightenSpine" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
                             </div>
                         </div>
+
+                        <h2>Miscellaneous</h2>
+                        <div class="row-wrapper">
+                            <div class="option-caption">Alternative Rescale:</div>
+                            <div class="option-input">
+                                <div id="ExperimentalAvatarRescale" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                            </div>
+                        </div>
+
+                        <div class="row-wrapper">
+                            <div class="option-caption">Allow Smaller Playercollider:</div>
+                            <div class="option-input">
+                                <div id="ExperimentalIgnoreMinColliderRadius" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                            </div>
+                        </div>
                     </div>
+
 
                     <div id="settings-support" class="settings-categorie">
                         
@@ -1217,9 +1328,10 @@
                     <input type="text" class="inp_search" id="globalSearch" placeholder="Search" data-submit="loadSearch();" onclick="displayKeyboard(this);" />
                     <div class="scroll-content">
                         <div class="filter-content">
-                            <div class="filter-option data-filter-users" onclick="filterSearch('users');">User</div>
-                            <div class="filter-option data-filter-avatars" onclick="filterSearch('avatars');">Avatars</div>
-                            <div class="filter-option data-filter-worlds" onclick="filterSearch('worlds');">Worlds</div>
+                            <div class="filter-option data-filter-users" onclick="filterSearch('users');">User <div class="result-count">0</div></div>
+                            <div class="filter-option data-filter-avatars" onclick="filterSearch('avatars');">Avatars <div class="result-count">0</div></div>
+                            <div class="filter-option data-filter-worlds" onclick="filterSearch('worlds');">Worlds <div class="result-count">0</div></div>
+                            <div class="filter-option data-filter-props" onclick="filterSearch('props');">Props <div class="result-count">0</div></div>
                         </div>
                     </div>
                     <div class="content-btn first" onclick="filterSearch('');">Reset Filters</div>
@@ -1238,6 +1350,10 @@
                         <div class="search-results-header">Worlds <div class="result-count">0</div></div>
                         <div class="search-result-wrapper"></div>
                     </div>
+                    <div id="searchResultsProps">
+                        <div class="search-results-header">Props <div class="result-count">0</div></div>
+                        <div class="search-result-wrapper"></div>
+                    </div>
                 </div>
             </div>
 
@@ -1253,7 +1369,7 @@
                     </div>
                 </div>
 
-                <div class="content-btn exit-second" onclick="goHome();">
+                <div class="content-btn exit-second disabled" onclick="">
                     <img src="gfx/home.svg" class="exit-icon">
                     <div class="text-group">
                         <h2>Disconnect and join your home world</h2>
@@ -1312,23 +1428,23 @@
                 <div class="content-world-actions">
                     <div class="row-wrapper even-spacing">
                         <img class="world-image data-worldImage" src="gfx/placeholder-square.png">
-                        <div class="action-btn data-worldSetHome row1 col1">
+                        <div class="action-btn data-worldSetHome row1 col1 disabled">
                             <img src="gfx/home.svg">
                             <span>Set Home</span></div>
-                        <div class="action-btn data-worldFavorite row1 col2">
+                        <div class="action-btn data-worldFavorite row1 col2 disabled">
                             <img src="gfx/favorite.svg">
                             <span>Favorite</span></div>
-                        <div class="action-btn data-worldReport row1 col3">
+                        <div class="action-btn data-worldReport row1 col3 disabled">
                             <img src="gfx/report.svg">
                             <span>Report</span></div>
 
                         <div class="action-btn data-worldPreload row2 col1">
                             <img src="gfx/preload.svg">
                             <span>Preload</span></div>
-                        <div class="action-btn data-worldPreload row2 col2">
+                        <div class="action-btn data-worldPreload row2 col2 disabled">
                             <img src="gfx/image.svg">
                             <span>Screenshots</span></div>
-                        <div class="action-btn data-worldExplore row2 col3">
+                        <div class="action-btn data-worldExplore row2 col3 disabled">
                             <img src="gfx/compass.svg">
                             <span>Explore</span></div>
                     </div>
@@ -1362,8 +1478,8 @@
 
                     <h3>Select instance Type</h3>
                     <div class="content-btn instancing-type-btn active" onclick="instancingChangeType('Public', this);">Public</div>
-                    <div class="content-btn instancing-type-btn" onclick="instancingChangeType('Friends', this);">Friends</div>
                     <div class="content-btn instancing-type-btn" onclick="instancingChangeType('FriendsOfFriends', this);">Friends of friends</div>
+                    <div class="content-btn instancing-type-btn" onclick="instancingChangeType('Friends', this);">Friends</div>
                     <div class="content-btn instancing-type-btn disabled">Group</div>
                     <div class="content-btn instancing-type-btn" onclick="instancingChangeType('EveryoneCanInvite', this);">Everyone can invite</div>
                     <div class="content-btn instancing-type-btn" onclick="instancingChangeType('OwnerMustInvite', this);">Owner must invite</div>
@@ -1492,22 +1608,22 @@
                         <div class="tab-btn active" onclick="switchTab('#user-detail .tab-btn', '#user-detail .tab-content', '#tab-content-activity', this)">
                             Activity<div class="active-overlay"></div>
                         </div>
-                        <div class="tab-btn" onclick="switchTab('#user-detail .tab-btn', '#user-detail .tab-content', '#tab-content-avatars', this)">
+                        <div class="tab-btn disabled" onclick="">
                             Avatars<div class="active-overlay"></div>
                         </div>
-                        <div class="tab-btn" onclick="switchTab('#user-detail .tab-btn', '#user-detail .tab-content', '#tab-content-worlds', this)">
+                        <div class="tab-btn disabled" onclick="">
                             Worlds<div class="active-overlay"></div>
                         </div>
-                        <div class="tab-btn" onclick="switchTab('#user-detail .tab-btn', '#user-detail .tab-content', '#tab-content-badges', this)">
+                        <div class="tab-btn disabled" onclick="">
                             Badges<div class="active-overlay"></div>
                         </div>
-                        <div class="tab-btn" onclick="switchTab('#user-detail .tab-btn', '#user-detail .tab-content', '#tab-content-groups', this)">
+                        <div class="tab-btn disabled" onclick="">
                             Groups<div class="active-overlay"></div>
                         </div>
-                        <div class="tab-btn" onclick="switchTab('#user-detail .tab-btn', '#user-detail .tab-content', '#tab-content-feed', this)">
+                        <div class="tab-btn disabled" onclick="">
                             Feed<div class="active-overlay"></div>
                         </div>
-                        <div class="tab-btn" onclick="switchTab('#user-detail .tab-btn', '#user-detail .tab-content', '#tab-content-misc1', this)">
+                        <div class="tab-btn disabled" onclick="">
                             ---<div class="active-overlay"></div>
                         </div>
                     </div>
@@ -1849,49 +1965,35 @@
             </div>
 
             <div class="toolbar">
-                <div class="toolbar-btn active" onclick="changeTab('home', this);"><img src="gfx/nav-home.svg">Home</div>
-                <div class="toolbar-btn" onclick="changeTab('friends', this);"><img src="gfx/nav-friends.svg">Friends</div>
+                <div class="toolbar-btn active tab_btn_home" onclick="changeTab('home', this);"><img src="gfx/nav-home.svg">Home</div>
+                <div class="toolbar-btn tab_btn_friends" onclick="changeTab('friends', this);"><img src="gfx/nav-friends.svg">Friends</div>
                 <!--<div class="toolbar-btn deactivated"><img src="gfx/nav-groups.svg">Groups</div>-->
-                <div class="toolbar-btn" onclick="changeTab('avatars', this);"><img src="gfx/nav-avatars.svg">Avatars</div>
-                <div class="toolbar-btn" onclick="changeTab('worlds', this);"><img src="gfx/nav-worlds.svg">Worlds</div>
-                <div class="toolbar-btn" onclick="changeTab('props', this);"><img src="gfx/btn-props.svg">Props</div>
+                <div class="toolbar-btn tab_btn_avatars" onclick="changeTab('avatars', this);"><img src="gfx/nav-avatars.svg">Avatars</div>
+                <div class="toolbar-btn tab_btn_worlds" onclick="changeTab('worlds', this);"><img src="gfx/nav-worlds.svg">Worlds</div>
+                <div class="toolbar-btn tab_btn_props" onclick="changeTab('props', this);"><img src="gfx/btn-props.svg">Props</div>
                 <div class="toolbar-btn-double">
                     <div class="time-display">00:00</div>
-                    <!--<div class="action-btn" onclick="changeTab('search', this);">Search</div>-->
+                    <div id="search-btn" class="action-btn" onclick="changeTab('search', this);">Search</div>
                 </div>
                 <div onclick="toggleMic();" class="toolbar-btn action-mute"><img src="gfx/mute.svg">Unmute</div>
                 <!--<div class="toolbar-btn deactivated"><img src="gfx/nav-missions.svg">Missions</div>-->
-                <div class="toolbar-btn" onclick="changeTab('messages', this);"><img src="gfx/nav-messages.svg">Messages</div>
-                <div class="toolbar-btn" onclick="changeTab('settings', this);"><img src="gfx/nav-settings.svg">Settings</div>
+                <div class="toolbar-btn tab_btn_messages" onclick="changeTab('messages', this);"><img src="gfx/nav-messages.svg">Messages</div>
+                <div class="toolbar-btn tab_btn_settings" onclick="changeTab('settings', this);"><img src="gfx/nav-settings.svg">Settings</div>
                 <!--<div class="toolbar-btn deactivated"><img src="gfx/nav-mod-tools.svg">Mod Tools</div>-->
                 <div onclick="mouseUnlock();" class="toolbar-btn"><img src="gfx/mouse.svg">Cursorlock</div>
                 <div id="props-btn" style="display:none;" onclick="" class="toolbar-btn"><img src="gfx/mouse.svg">Props</div>
-                <div class="toolbar-btn" onclick="changeTab('exit', this);"><img src="gfx/nav-exit.svg">Exit</div>
+                <div class="toolbar-btn tab_btn_exit" onclick="changeTab('exit', this);"><img src="gfx/nav-exit.svg">Exit</div>
             </div>
         </div>
 
         <script src="ui.js"></script>
-        <script src="dasuimain.js"></script>
+		<script src="dasuimain.js"></script>
         <script>
             var debug = false;
 
             if(debug){
                 loadFriends([
-                {Guid: 'AAAA', OnlineState: true,  ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'},
-                {Guid: 'AAAA', OnlineState: false, ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'},
-                {Guid: 'AAAA', OnlineState: false, ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'},
-                {Guid: 'AAAA', OnlineState: false, ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'},
-                {Guid: 'AAAA', OnlineState: false, ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'},
-                {Guid: 'AAAA', OnlineState: false, ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'},
-                {Guid: 'AAAA', OnlineState: false, ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'},
-                {Guid: 'AAAA', OnlineState: false, ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'},
-                {Guid: 'AAAA', OnlineState: false, ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'},
-                {Guid: 'AAAA', OnlineState: false, ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'},
-                {Guid: 'AAAA', OnlineState: false, ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'},
-                {Guid: 'AAAA', OnlineState: false, ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'},
-                {Guid: 'AAAA', OnlineState: false, ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'},
-                {Guid: 'AAAA', OnlineState: false, ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'},
-                {Guid: 'AAAA', OnlineState: false, ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'}], []);
+                {Guid: 'AAAA', OnlineState: true,  UserImageUrl: 'https://static-cdn.jtvnw.net/jtv_user_pictures/9990d40f-3095-4377-a43c-2065b2df3130-profile_image-70x70.png', UserName: 'Testuser'}], []);
 
                 loadWorlds([{Guid: 'AAAA', WorldImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', WorldName: 'Testworld'},
                 {Guid: 'AAAA', WorldImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', WorldName: 'Testworld'},
@@ -1907,7 +2009,7 @@
                 {Guid: 'AAAA', AvatarImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', AvatarName: 'Testavatar (test,bleep)', FilterTags: 'test,bleep'}],
                 [{CategoryKey: 'test', CategoryClearTextName: 'Testcategory'},{CategoryKey: 'bleep', CategoryClearTextName: 'Bleep Category'}]);
 
-                loadMessages([{}], [{}], [{}], [{}], [{}]);
+                
 
                 updateGameDebugInformation({Fps: '999', Ping: '1337', Version: 'Its wednesday my dude'})
 

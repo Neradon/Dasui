@@ -1,24 +1,36 @@
-renderWorlds = function(_list){
-    var contentList = document.querySelector('#worlds .list-content');
+// renderWorlds = function(_list){
+//     var contentList = document.querySelector('#worlds .list-content');
 
-    var html = '<div class="flex-list">';
+//     /*
+//     var html = '<div class="flex-list">';
 
-    for(var i=0; _list[i]; i++){
+//     for(var i=0; _list[i]; i++){
 				
-		html += '<div data-id="'+_list[i].WorldId+'" class="content-cell friend" onclick="getWorldDetailsNew(\''+_list[i].WorldId+'\',event);" onmousedown="mousedowntest(event);"><div class="content-cell-formatter"></div>'+
-                '<div class="content-cell-content"><div class="online-state-test">'+
-                '<img class="content-image" src="'+
-                _list[i].WorldImageUrl+'"></div><div class="content-name world">'+
-                _list[i].WorldName.makeSafe()+'</div></div>'+
-				'</div>';
+// 		html += '<div data-id="'+_list[i].WorldId+'" class="content-cell friend" onclick="getWorldDetailsNew(\''+_list[i].WorldId+'\',event);" onmousedown="mousedowntest(event);"><div class="content-cell-formatter"></div>'+
+//                 '<div class="content-cell-content"><div class="online-state-test">'+
+//                 '<img class="content-image" src="'+
+//                 _list[i].WorldImageUrl+'"></div><div class="content-name world">'+
+//                 _list[i].WorldName.makeSafe()+'</div></div>'+
+// 				'</div>';
 
        
-    }
+//     }
 
-    html += '</div>';
+//     html += '</div>';
     
-    contentList.innerHTML = html;
-}
+//     contentList.innerHTML = html;
+//     */
+//     if (_forceRefresh === true) cvr('#worlds .list-content .flex-list').innerHTML('');
+//     worldsResetLoad = false;
+    
+//     for(var i=0; _list[i]; i++){
+//         if (cvr('#worlds .list-content .flex-list #wrld_'+_list[i].WorldId+'').length == 0){
+//             AddWorld(_list[i]);
+//         } else {
+//             UpdateWorld(_list[i]);
+//         }
+//     }
+// }
 
 function getWorldDetailsNew(_uid,e){
 	
@@ -38,23 +50,24 @@ function getWorldDetailsNew(_uid,e){
 }
 
 AddWorld = function(_world){
-    var html = '<div data-id="'+_list[i].WorldId+'" class="content-cell friend" onclick="getWorldDetailsNew(\''+_list[i].WorldId+'\',event);" onmousedown="mousedowntest(event);"><div class="content-cell-formatter"></div>'+
-        '<div class="content-cell-content"><div class="online-state-test">'+
-        '<img class="content-image" src="'+
-        _list[i].WorldImageUrl+'"></div><div class="content-name world">'+
-        _list[i].WorldName.makeSafe()+'</div></div>'+
-        '</div>';
+    var html = '<div id="wrld_'+_world.WorldId+'" class="content-cell world" onclick="getWorldDetailsNew(\''+_world.WorldId+'\',event);" onmousedown="mousedowntest(event);"><div class="content-cell-formatter"></div>'+
+        '<div class="content-cell-content"><img class="content-image" src="'+
+        _world.WorldImageUrl+'"><div class="content-name">'+
+        _world.WorldName.makeSafe()+'</div>'+
+        '</div></div>';
 
     cvr('#worlds .list-content .flex-list').addHTML(html);
 }
 
 UpdateWorld = function(_world){
-    cvr('#worlds .list-content .flex-list [data-id="'+_world.WorldId+'"] .content-image').attr('src', _world.WorldImageUrl);
-    cvr('#worlds .list-content .flex-list [data-id="'+_world.WorldId+'"] .content-name').innerHTML(_world.WorldName.makeSafe());
+    if (cvr('#worlds .list-content .flex-list #wrld_' + _world.WorldId + ' .content-image').first().getAttribute('src') != _world.WorldImageUrl) {
+        cvr('#worlds .list-content .flex-list #wrld_' + _world.WorldId + ' .content-image').attr('src', _world.WorldImageUrl);
+    }
+    cvr('#worlds .list-content .flex-list #wrld_'+_world.WorldId+' .content-name').innerHTML(_world.WorldName.makeSafe());
 }
 
 RemoveWorld = function(_world){
-    cvr('#worlds .list-content .flex-list [data-id="'+_world.WorldId+'"]').remove();
+    cvr('#worlds .list-content .flex-list #wrld_'+_world.WorldId+'').remove();
 }
 
 
@@ -82,7 +95,7 @@ function AddWorldToFavourites(_uid,_name,_image){
 	}
 }
 
-
+/*
 filterContent = function(_ident, _filter){
       var buttons = document.querySelectorAll('#'+_ident+' .filter-option');
     
@@ -112,11 +125,13 @@ filterContent = function(_ident, _filter){
                  }				
              break;
          case 'friends':
-                 var list = filterList(friendList, _filter);
-                 renderFriends(list);
+                //  var list = filterList(friendList, _filter);
+                //  renderFriends(list);
+                 filterFriendList(_filter);
              break;
      }
 }
+*/
 
 
 loadWorldDetails = function(_data, _instances){
@@ -178,23 +193,11 @@ loadWorlds = function(_list){
 
     renderWorlds(_list);
 
-    worldsResetLoad = false;
+    // worldsResetLoad = false;
 }
 
-function cobaltSearchWorld(){
-    var term = document.getElementById('cobaltSearchWorld').value.toLowerCase();
 
-    if(worldList != null){
-        var newworldList = worldList.filter(world => world.WorldName.toLowerCase().includes(term));
-        renderWorlds(newworldList);
-    }
-}
-
-function resetCobaltSearch(){
-    document.getElementById('cobaltSearchWorld').value = "";
-    renderWorlds(worldList);
-}
-
+/*
 RenderCategories = function(_categories){
     for (var i=0; i < _categories.length; i++){
         var category = _categories[i];
@@ -217,9 +220,9 @@ RenderCategories = function(_categories){
     }
     //document.querySelector('#groups .filter-content').innerHTML = html;
 
-    html = "<div class=\"searchBar\"> <input type=\"text\" class=\"inp_search\" id=\"cobaltSearchWorld\" placeholder=\"Search\" data-submit=\"cobaltSearchWorld();\" onclick=\"displayKeyboard(this);\" /> <div class=\"content-btn color-primary\" style=\"width: 60px; position: relative; left: auto;\" onclick=\"resetCobaltSearch();\" >X</div> </div>";
+    html = "";
     
-    html += '<div class="filter-option data-filter-favourites" onclick="filterContent(\'worlds\', \'favourites\');">Favourites</div>';
+    // html += '<div class="filter-option data-filter-favourites" onclick="filterContent(\'worlds\', \'favourites\');">Favourites</div>';
 
     for (var i in categories[2]){
         html += '<div class="filter-option data-filter-'+categories[2][i].CategoryKey+
@@ -247,17 +250,17 @@ RenderCategories = function(_categories){
     }
     document.querySelector('#props .filter-content').innerHTML = html;
 }
+*/
 
 
 
-document.styleSheets[0].insertRule(".content-name.world{ line-height:1.5em !important; } ");
-document.styleSheets[0].insertRule(".world .content-image { bottom: 7em !important; border-radius: 10px !important; }");
-document.styleSheets[0].insertRule(".content-cell.world{ width: 18.5% !important; margin-right: 1.5% !important; margin-bottom: 1.5% !important; /* NEW */ background-color: rgba(150,150,150,0.6) !important; border: none !important; border-radius: 5px !important; /* box-shadow: 5px 5px 10px 5px rgba(181,175,174,0.5); */ } ");
-document.styleSheets[0].insertRule(".content-cell-new-bottomtext{ position:absolute; right:0; left:0; margin:auto; bottom:10; text-align:center; overflow:hidden; }");
-document.styleSheets[0].insertRule(".content-cell.world:hover { background-color: rgba(150,150,150,0.8) !important; } ");
-document.styleSheets[0].insertRule(".world .content-cell-content{ left: 0px !important; top: 0px !important; bottom: 0px !important; margin: 0px 0px 0px 0px !important; padding: 0px 0px 0px 0px !important; }");
-document.styleSheets[0].insertRule(" .world .content-cell-formatter{ margin-top: 2em !important; } ");
-document.styleSheets[0].insertRule(".searchBar{display: flex;margin-bottom:1em; width:90%;}");
-document.styleSheets[0].insertRule(".inp_search{ width: 33em; height: 4em; line-height: 1.7em; text-align: center; border-radius: 0.25em; } ");
 
-engine.trigger('CVRAppTaskRefreshCategories');
+document.styleSheets[0].insertRule(".world .content-cell-formatter{ margin-top: 2em !important; }");
+document.styleSheets[0].insertRule(".content-cell.world{ width: 18.5% !important; margin-right: 1.5% !important; margin-bottom: 1.5% !important; /* NEW */ background-color: rgba(150,150,150,0.6) !important; border: none !important; border-radius: 5px !important; /* box-shadow: 5px 5px 10px 5px rgba(181,175,174,0.5); */ }");
+document.styleSheets[0].insertRule(".content-cell.world:hover { background-color: rgba(150,150,150,0.8) !important; }");
+document.styleSheets[0].insertRule(".world .content-cell-content{ left: 6% !important; }");
+document.styleSheets[0].insertRule(".world .content-name{ left: -6% !important; bottom: -6% !important; width: 112% !important; height: 2em !important; /* background-color: rgba(150,150,150,0.8); */ line-height:1.5em !important; }");
+document.styleSheets[0].insertRule(".world .content-image{ position: unset !important; width: 100% !important; height: 83% !important; bottom: unset !important; top: unset !important; border-radius: unset !important; }");
+
+
+// engine.trigger('CVRAppTaskRefreshCategories');

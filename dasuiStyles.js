@@ -245,11 +245,11 @@ document.styleSheets[0].insertRule(".toolbar-btn + .toolbar-btn { border-left: 0
 document.styleSheets[0].insertRule(".content { background: top / 2560px 1440px no-repeat url('coui://UIResources/CVRTest/background.png');  }");
 document.styleSheets[0].insertRule(".toolbar { background: bottom / 2560px 1440px no-repeat url('coui://UIResources/CVRTest/background.png'); } ");
 document.styleSheets[0].insertRule(".tab-contents {background-color: rgba(0,0,0,0) !important} ");
-// document.styleSheets[0].insertRule("");
 
 var newItem = document.createElement("div");
-newItem.innerHTML = "<div class=\"filter-option\" style=\"position:absolute\" onclick=\"switchSettingCategorie('settings-dasui', this)\">DasUI</div>";
-var list = document.getElementById("settings").getElementsByClassName("list-filter")[0];
+newItem.innerHTML = "<div class=\"filter-option\" onclick=\"switchSettingCategorie('settings-dasui', this)\">DasUI</div>";
+// var list = document.getElementById("settings").getElementsByClassName("filter-content")[0];
+var list = document.querySelector("div#settings .list-filter .scroll-content .filter-content")
 
 list.insertBefore(newItem.firstChild,list.childNodes[0]);
 
