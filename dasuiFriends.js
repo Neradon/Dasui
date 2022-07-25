@@ -1,59 +1,112 @@
+var firstFriendLength = -1;
+
 loadFriends = function(_list){
-    friendList = _list;
+    if(firstFriendLength == -1){
+        firstFriendLength = _list.length;
+        friendList = _list;
+    }
         
     for (var i=0; i < friendList.length; i++){
         friendList[i].FilterTags += ','+(friendList[i].UserIsOnline?'frndonline':'frndoffline');
     }
+
+
     
-    friendList.sort(function(a,b){
-        return b.UserIsOnline - a.UserIsOnline;
-    });
-
-
     renderFriends(_list);
+
+
+
+    OrderFriendlist();
     // filterFriendList("frndonline")
 }
 
-// renderFriends = function(_list){
-//     var contentList = document.querySelector('#friends .list-content');
+renderFriends = function(_list){
+    // var contentList = document.querySelector('#friends .list-content');
 
-//     /*
-//     var html = '<div class="flex-list">';
+    /*
+    var html = '<div class="flex-list">';
 
-//     for(var i=0; _list[i]; i++){
-//         html += '<div data-id="'+_list[i].UserId+'" class="content-cell friend" onclick="getUserDetailsNew(\''+_list[i].UserId+'\',event);" onmousedown="mousedowntest(event);"><div class="content-cell-formatter"></div>'+
-//                 '<div class="content-cell-content"><div class="online-state-test '+(_list[i].UserIsOnline?'online':'offline')+' '+_list[i].FilterTags+'">'+
-//                 '<img class="content-image online-state-image '+(_list[i].UserIsOnline?'online':'offline')+'" src="'+
-//                 _list[i].UserImageUrl+'"></div><div class="content-name">'+
-//                 _list[i].UserName.makeSafe()+'</div></div>'+
-//                 '</div>';
-//     }
+    for(var i=0; _list[i]; i++){
+        html += '<div data-id="'+_list[i].UserId+'" class="content-cell friend" onclick="getUserDetailsNew(\''+_list[i].UserId+'\',event);" onmousedown="mousedowntest(event);"><div class="content-cell-formatter"></div>'+
+                '<div class="content-cell-content"><div class="online-state-test '+(_list[i].UserIsOnline?'online':'offline')+' '+_list[i].FilterTags+'">'+
+                '<img class="content-image online-state-image '+(_list[i].UserIsOnline?'online':'offline')+'" src="'+
+                _list[i].UserImageUrl+'"></div><div class="content-name">'+
+                _list[i].UserName.makeSafe()+'</div></div>'+
+                '</div>';
+    }
 
-//     html += '</div>';
+    html += '</div>';
 
-//     contentList.innerHTML = html;
-//     */
-//     for(var i=0; _list[i]; i++){
-//         if (cvr('#friends .list-content .flex-list #frnd_'+_list[i].UserId+'').length == 0){
-//             AddFriend(_list[i]);
-//         } else {
-//             UpdateFriend(_list[i]);
-//         }
-//     }
-// }
+    contentList.innerHTML = html;
+    */
+    // document.querySelector('#friends .list-content .flex-list').innerHTML = "";
+
+    for(var i=0; _list[i]; i++){
+        if (cvr('#friends .list-content .flex-list #frnd_'+_list[i].UserId+'').length == 0){
+            AddFriendLoading(_list[i]);
+        } else {
+            UpdateFriendNew(_list[i]);
+        }
+    }
+}
+
+function OrderFriendlist(){
+//     friendList.sort(function(a,b){
+//         return b.UserIsOnline - a.UserIsOnline;
+//    });
+
+
+friendList.sort(function(a,b){
+    return a.UserName.toLowerCase().localeCompare(b.UserName.toLowerCase());
+});
+    friendList.sort(function(a,b){
+        return b.UserIsOnline - a.UserIsOnline;
+    });
+    
+
+
+    var parent = document.querySelector('#friends .list-content .flex-list');
+
+    for(var i = friendList.length-1; friendList[i];i--){
+        var node = document.querySelector('#friends .list-content .flex-list #frnd_'+friendList[i].UserId);
+        parent.insertBefore(node,parent.childNodes[0]);
+    }
+}
 
 UpdateFriend = function(_friend){
+    return;
+}
+
+function UpdateFriendNew(_friend){
     cvr('#friends .list-content .flex-list #frnd_'+_friend.UserId).className('content-cell friend '+(_friend.UserIsOnline?'frndonline':'frndoffline'));
-    cvr('#friends .list-content .flex-list #frnd_'+_friend.UserId+' .online-state').className('online-state '+(_friend.UserIsOnline?'online':'offline')+' '+_friend.FilterTags);
+    cvr('#friends .list-content .flex-list #frnd_'+_friend.UserId+' .online-state-test').className('online-state-test '+(_friend.UserIsOnline?'online':'offline')+' '+_friend.FilterTags);
     if (cvr('#friends .list-content .flex-list #frnd_'+_friend.UserId+' .content-image').first().getAttribute('src') != _friend.UserImageUrl) {
         cvr('#friends .list-content .flex-list #frnd_' + _friend.UserId + ' .content-image').attr('src', _friend.UserImageUrl);
     }
     cvr('#friends .list-content .flex-list #frnd_'+_friend.UserId+' .content-name').innerHTML(_friend.UserName.makeSafe());
+    var foundIndex = friendList.findIndex(x => x.UserId == _friend.UserId);
+    friendList[foundIndex].UserIsOnline = _friend.UserIsOnline;
+    console.log("updatefrends");
+    OrderFriendlist();
 }
 
 AddFriend = function(_friend){
     var html = 
-        '<div id="frnd_'+_friend.UserId+'" class="content-cell friend '+(_friend.UserIsOnline?'frndonline':'frndoffline')+'" onclick="getUserDetailsNew(\''+_friend.UserId+'\',event);" onmousedown="mousedowntest(event);">'+
+        '<div id="frnd_'+_friend.UserId+'" status="'+_friend.UserIsOnline+'" class="content-cell friend '+(_friend.UserIsOnline?'frndonline':'frndoffline')+'" onclick="getUserDetailsNew(\''+_friend.UserId+'\',event);" onmousedown="mousedowntest(event);">'+
+        '<div class="content-cell-formatter"></div>'+
+        '<div class="content-cell-content"><div class="online-state-test '+(_friend.UserIsOnline?'online':'offline')+' '+_friend.FilterTags+'"></div>'+
+        '<img class="content-image online-state-image '+(_friend.UserIsOnline?'online':'offline')+'" src="'+
+        _friend.UserImageUrl+'"><div class="content-name">'+
+        _friend.UserName.makeSafe()+'</div>'+
+        '</div></div>';
+    
+    cvr('#friends .list-content .flex-list').addHTML(html);
+    OrderFriendlist();
+}
+
+function AddFriendLoading(_friend){
+    var html = 
+        '<div id="frnd_'+_friend.UserId+'" status="'+_friend.UserIsOnline+'" class="content-cell friend '+(_friend.UserIsOnline?'frndonline':'frndoffline')+'" onclick="getUserDetailsNew(\''+_friend.UserId+'\',event);" onmousedown="mousedowntest(event);">'+
         '<div class="content-cell-formatter"></div>'+
         '<div class="content-cell-content"><div class="online-state-test '+(_friend.UserIsOnline?'online':'offline')+' '+_friend.FilterTags+'"></div>'+
         '<img class="content-image online-state-image '+(_friend.UserIsOnline?'online':'offline')+'" src="'+
@@ -63,7 +116,6 @@ AddFriend = function(_friend){
     
     cvr('#friends .list-content .flex-list').addHTML(html);
 }
-
 
 document.styleSheets[0].insertRule(".friend .content-cell-formatter{ margin-top: 2em !important; }");
 document.styleSheets[0].insertRule(".content-cell.friend{ width: 18.5% !important; margin-right: 1.5% !important; margin-bottom: 1.5% !important; /* NEW */ background-color: rgba(150,150,150,0.6) !important; border: none !important; border-radius: 5px !important; /* box-shadow: 5px 5px 10px 5px rgba(181,175,174,0.5); */ }");
@@ -79,7 +131,6 @@ document.styleSheets[0].insertRule(".friend .content-image{ position: unset !imp
 
 
 function getUserDetailsNew(_uid,e){
-    console.log("Clickedy")
 	var dif = {x:0,y:0};
 	dif.x = e.clientX - mousedownlocation.x;
 	dif.y = e.clientY - mousedownlocation.y;
