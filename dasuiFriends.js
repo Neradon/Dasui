@@ -5,8 +5,13 @@ loadFriends = function(_list){
         friendList[i].FilterTags += ','+(friendList[i].UserIsOnline?'frndonline':'frndoffline');
     }
     
+    friendList.sort(function(a,b){
+        return b.UserIsOnline - a.UserIsOnline;
+    });
+
+
     renderFriends(_list);
-    filterFriendList("frndonline")
+    // filterFriendList("frndonline")
 }
 
 // renderFriends = function(_list){
