@@ -5,7 +5,7 @@ https://store.steampowered.com/app/661130/ChilloutVR
 
 
 # WARNING
-This version supports the gameversion "2021r161" and "2021r161 Experimental 1"!
+This version supports the gameversion "2022r165"!
 
 # Installation
 
@@ -25,11 +25,9 @@ Reordered friends based on online status and name and made the whole friend imag
 (Obvious visual change for online/offline)
 ![Friendlist](https://i.imgur.com/pzItS0v.jpg)
 
-Local world favourites using the already implemented favourite button on the world details page to quickly find a world you wanna revisit. (Only in until the official world favouriting is in the game)
+Local world favourites using the already implemented favourite button on the world details page to quickly find a world you wanna revisit. (Only in until the official world favouriting is in the game! Not working rn)
 ![World Favourites](https://i.imgur.com/Nm4kFhq.jpg)
 
-Local world search functionality: Search the currently filtered worlds by name. (Example: To search all available Worlds, click on "public worlds" and then use the search bar)
-![World search](https://i.imgur.com/XrgKhKI.png)
 
 For custom background image, place the image with the filename "background.png" next to your dasui.css file.
 (Folder should be this  "ChilloutVR\ChilloutVR_Data\StreamingAssets\Cohtml\UIResources\CVRTest")
