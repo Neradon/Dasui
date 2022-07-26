@@ -4,6 +4,8 @@ var gameVersion = "-1";
 
 var dasuiVersion = ["2022r165"];
 
+var currentVersion = "1.0";
+
 var compatible = false;
 
 var checkedVersion = false;
@@ -405,6 +407,32 @@ function GetFromCustom(_key){
 
 // #endregion
 
+// #region Version checker
+
+
+
+function versionRequest(){
+	var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "https://raw.githubusercontent.com/Neradon/Dasui/main/version.txt", true);
+	xhttp.onreadystatechange = function() {
+	if (this.readyState == 4 && this.status == 200) {
+        var majorNew = parseInt(this.responseText.split(".")[0]);
+        var minorNew = parseInt(this.responseText.split(".")[1]);
+        var majorCurrent = parseInt(currentVersion.split(".")[0]);
+        var minorCurrent = parseInt(currentVersion.split(".")[1]);
+        if(majorNew > majorCurrent || (majorNew == majorCurrent && minorNew > minorCurrent)){
+            uiAlertShow('DasUI', 'New Version is available!\nPlease update bit.ly/dasui', 404);
+        }
+	}
+};
+
+xhttp.send("test=test");
+}
+
+
+
+versionRequest();
+// #endregion
 
 var mousedownlocation = {x:0,y:0};
 

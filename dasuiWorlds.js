@@ -66,10 +66,6 @@ UpdateWorld = function(_world){
     cvr('#worlds .list-content .flex-list #wrld_'+_world.WorldId+' .content-name').innerHTML(_world.WorldName.makeSafe());
 }
 
-RemoveWorld = function(_world){
-    cvr('#worlds .list-content .flex-list #wrld_'+_world.WorldId+'').remove();
-}
-
 
 function IsWorldInFavourites(_uid){
 	var favs = GetCustomArray("worldfavourites");
@@ -93,6 +89,42 @@ function AddWorldToFavourites(_uid,_name,_image){
 	if(worldFilter == "favourites"){
 		renderWorlds(GetCustomArray("worldfavourites"));
 	}
+}
+
+filterContent = function(_ident, _filter){
+    var buttons = document.querySelectorAll('#'+_ident+' .filter-option');
+
+    for(var i=0; buttons[i]; i++){
+        buttons[i].classList.remove('active');
+    }
+
+    var activeButton = document.querySelector('#'+_ident+' .filter-option.data-filter-'+_filter+'');
+    if(activeButton != null){
+        activeButton.classList.add('active');
+    }
+
+    switch(_ident){
+        case 'avatars':
+                var list = filterList(avatarList, _filter);
+                renderAvatars(list, true);
+            break;
+            case 'worlds':
+                worldFilter = _filter;								
+               if(_filter.startsWith("worlds_")){
+                    var _list = GetCustomArray("worldfavourites");
+                    worldList = _list;
+                    renderWorlds(_list,true);
+                 }
+                 else{
+                     loadFilteredWorlds();
+                }				
+            break;
+        case 'friends':
+                //var list = filterList(friendList, _filter);
+                //renderFriends(list);
+                filterFriendList(_filter);
+            break;
+    }
 }
 
 /*
@@ -188,13 +220,13 @@ loadWorldDetails = function(_data, _instances){
 
 
 
-loadWorlds = function(_list){
-    worldList = _list;
+// loadWorlds = function(_list){
+//     worldList = _list;
 
-    renderWorlds(_list);
+//     renderWorlds(_list);
 
-    // worldsResetLoad = false;
-}
+//     // worldsResetLoad = false;
+// }
 
 
 /*
@@ -261,6 +293,9 @@ document.styleSheets[0].insertRule(".content-cell.world:hover { background-color
 document.styleSheets[0].insertRule(".world .content-cell-content{ left: 6% !important; }");
 document.styleSheets[0].insertRule(".world .content-name{ left: -6% !important; bottom: -6% !important; width: 112% !important; height: 2em !important; /* background-color: rgba(150,150,150,0.8); */ line-height:1.5em !important; }");
 document.styleSheets[0].insertRule(".world .content-image{ position: unset !important; width: 100% !important; height: 83% !important; bottom: unset !important; top: unset !important; border-radius: unset !important; }");
+// document.styleSheets[0].insertRule(".content-world-actions .data-worldFavorite{ background: unset !important; }");
 
+
+document.querySelector(".action-btn.data-worldFavorite").classList.remove("disabled")
 
 // engine.trigger('CVRAppTaskRefreshCategories');
