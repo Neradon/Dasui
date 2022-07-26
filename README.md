@@ -37,7 +37,7 @@ For custom background image, place the image with the filename "background.png" 
 Support for DjShinters VideoRemote which can be found here: https://github.com/DjShinter/VideoRemote
 
 # FEEDBACK
-If you found a bug or have a good idea for the UI, feel free to use the issues system on github or contact me on discord (Neradon#2898) 
+If you found a bug or have a good idea for the UI, feel free to use the issues system on github or contact me on discord (Nera#0809) 
 
 # DISCLAIMER
 All Rights for the ChilloutVR UI belong to AlphaBlendInteractive. This is only meant to be active until the [UI update](https://twitter.com/NicoKuroKusagi/status/1378072131125252096) is out. After that I will focus more on custom UI apps for it.
