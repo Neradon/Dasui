@@ -25,7 +25,7 @@ Reordered friends based on online status and name and made the whole friend imag
 (Obvious visual change for online/offline)
 ![Friendlist](https://i.imgur.com/pzItS0v.jpg)
 
-Local world favourites using the already implemented favourite button on the world details page to quickly find a world you wanna revisit. (Only in until the official world favouriting is in the game! Not working rn)
+Local world favourites using the already implemented favourite button on the world details page to quickly find a world you wanna revisit. (Only in until the official world favouriting is in the game!)
 ![World Favourites](https://i.imgur.com/Nm4kFhq.jpg)
 
 
