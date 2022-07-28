@@ -12,6 +12,14 @@ This version supports the gameversion "2022r165"!
 ## 1. Method
 Use the automatic installer from Milchzocker found [Here](https://github.com/MilchZocker/ChilloutVR-Dark-UI/releases/latest)
 
+In the first prompt press 'N' and 'Enter'
+![cmd_BMI5gs4w2S](https://user-images.githubusercontent.com/1348522/181431539-f727a732-0a89-41f2-9d8a-713c1b0bff90.png)
+
+In the second prompt press 'S' and 'Enter'
+![cmd_uFFuzhlQo9](https://user-images.githubusercontent.com/1348522/181431552-096109ab-1d2b-4912-9632-0e33b16350b7.png)
+
+
+
 ## 2. Method
 Download this repo by clicking on Code->"Download Zip" and put all the files in the zip in your ChilloutVR game folder under "ChilloutVR_Data\StreamingAssets\Cohtml\UIResources\CVRTest". Replace the existing files there with the new ones. (Example path where do put the files: "D:\Steamgames\steamapps\common\ChilloutVR\ChilloutVR_Data\StreamingAssets\Cohtml\UIResources\CVRTest")
 
