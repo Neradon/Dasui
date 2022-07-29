@@ -29,6 +29,7 @@ UI Color can be customized ingame
 ![Home menu](https://i.imgur.com/RpdpPzm.jpeg)
 ![Custom Color](https://i.imgur.com/CpKHu3P.jpg)
 
+(Disabled friends module right now because of some errors showing up)
 Reordered friends based on online status and name and made the whole friend image clickable to open the details page.
 (Obvious visual change for online/offline)
 ![Friendlist](https://i.imgur.com/pzItS0v.jpg)
