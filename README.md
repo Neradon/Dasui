@@ -5,7 +5,7 @@ https://store.steampowered.com/app/661130/ChilloutVR
 
 
 # WARNING
-This version supports the gameversion "2022r165"!
+This version supports the gameversion "2022r166"!
 
 # Installation
 
