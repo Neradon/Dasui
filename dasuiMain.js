@@ -2,9 +2,9 @@
 
 var gameVersion = "-1";
 
-var dasuiVersion = ["2022r165"];
+var dasuiVersion = ["2022r166"];
 
-var currentVersion = "1.0";
+var currentVersion = "1.1";
 
 var compatible = false;
 

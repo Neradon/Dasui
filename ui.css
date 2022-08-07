@@ -8,7 +8,6 @@
 14,814%
 */
 
-
 html {
     font-size: 2em;
 }
@@ -1299,10 +1298,10 @@ h1 {
 
 .user-settings-dialog {
     position: absolute;
-    top: 17%;
+    top: 9%;
     left: 34%;
     width: 50%;
-    height: 61%;
+    height: 69%;
 
     border-radius: 0.25em;
     overflow: hidden;
@@ -1316,6 +1315,8 @@ h1 {
 
     left: -100%;
     transition: left 0.2s linear;
+    
+    z-index: 100;
 }
 
 .user-settings-dialog p {

@@ -9,7 +9,7 @@
         <div class="wrapper">
 
             <div id="home" class="content in">
-                <h1>Welcome to ChilloutVR</h1>
+                <h1>Welcome to ChilloutVR Experimental</h1>
 
                 <div class="content-shortcuts">
                     <div class="content-caption">Shortcuts</div>
@@ -65,7 +65,6 @@
                         <div class="cell-name">Version: </div>
                         <div class="cell-value game-debug-version">[Version]</div>
                     </div>
-
                 </div>
 
                 <div class="content-feed">
@@ -276,7 +275,7 @@
                         <div class="row-wrapper">
                             <div class="option-caption">Player Height in cm:</div>
                             <div class="option-input">
-                              <div id="GeneralPlayerHeight" class="inp_slider" data-min="60" data-max="250" data-current="180" data-saveOnChange="true"></div>
+                              <div id="GeneralPlayerHeight" class="inp_slider no-scroll" data-min="60" data-max="250" data-current="180" data-saveOnChange="true"></div>
                                 <div class="inp_button_bar">
                                     <div class="inp_button" onclick="addSettingsValue('GeneralPlayerHeight', -5);">- 5</div>
                                     <div class="inp_button" onclick="addSettingsValue('GeneralPlayerHeight', -1);">- 1</div>
@@ -291,61 +290,67 @@
                             <div class="option-caption">Head Bobbing:</div>
                             <div class="option-input">
                                 <!--<div id="GeneralHeadBobbing" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>-->
-                                <div id="GeneralHeadBobbingLevel" class="inp_dropdown" data-options="2:Enabled,1:Reduced,0:Disabled" data-current="2" data-saveOnChange="true"></div>
+                                <div id="GeneralHeadBobbingLevel" class="inp_dropdown no-scroll" data-options="2:Enabled,1:Reduced,0:Disabled" data-current="2" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Show HUD:</div>
                             <div class="option-input">
-                                <div id="GeneralShowHud" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
+                                <div id="GeneralShowHud" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Show Nameplates:</div>
                             <div class="option-input">
-                                <div id="GeneralShowNameplates" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
+                                <div id="GeneralShowNameplates" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Show Image on Nameplates:</div>
                             <div class="option-input">
-                                <div id="GeneralNameplatesImageVisibility" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="GeneralNameplatesImageVisibility" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                            </div>
+                        </div>
+                        <div class="row-wrapper">
+                            <div class="option-caption">Enable Url Whitelist:</div>
+                            <div class="option-input">
+                                <div id="GeneralVideoPlayerEnableWhitelist" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Enable Intaractable Highlight:</div>
                             <div class="option-input">
-                                <div id="GeneralInteractableHighlight" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
+                                <div id="GeneralInteractableHighlight" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <!--<div class="row-wrapper">
                             <div class="option-caption">Language:</div>
                             <div class="option-input">
-                                <div id="GeneralLanguage" class="inp_dropdown" data-options="ab:Abkhazian,aa:Afar,af:Afrikaans,ak:Akan,sq:Albanian,am:Amharic,ar:Arabic,an:Aragonese,hy:Armenian,as:Assamese,av:Avaric,ae:Avestan,ay:Aymara,az:Azerbaijani,bm:Bambara,ba:Bashkir,eu:Basque,be:Belarusian,bn:Bengali,bh:Bihari languages,bi:Bislama,bs:Bosnian,br:Breton,bg:Bulgarian,my:Burmese,ca:Catalan&#44; Valencian,ch:Chamorro,ce:Chechen,ny:Chichewa&#44; Chewa&#44; Nyanja,zh:Chinese,cv:Chuvash,kw:Cornish,co:Corsican,cr:Cree,hr:Croatian,cs:Czech,da:Danish,dv:Divehi&#44; Dhivehi&#44; Maldivian,nl:Dutch&#44; Flemish,dz:Dzongkha,en:English,eo:Esperanto,et:Estonian,ee:Ewe,fo:Faroese,fj:Fijian,fi:Finnish,fr:French,ff:Fulah,gl:Galician,ka:Georgian,de:German,el:Greek&#44; Modern(1453–),gn:Guarani,gu:Gujarati,ht:Haitian&#44; Haitian Kreol,ha:Hausa,he:Hebrew,hz:Herero,hi:Hindi,ho:Hiri Motu,hu:Hungarian,ia:Interlingua (International Auxiliary Language Association),id:Indonesian,ie:Interlingue&#44; Occidental,ga:Irish,ig:Igbo,ik:Inupiaq,io:Ido,is:Icelandic,it:Italian,iu:Inuktitut,ja:Japanese,jv:Javanese,kl:Kalaallisut&#44; Greenlandic,kn:Kannada,kr:Kanuri,ks:Kashmiri,kk:Kazakh,km:Central Khmer,ki:Kikuyu&#44; Gikuyu,rw:Kinyarwanda,ky:Kirghiz&#44; Kyrgyz,kv:Komi,kg:Kongo,ko:Korean,ku:Kurdish,kj:Kuanyama&#44; Kwanyama,la:Latin,lb:Luxembourgish&#44; Letzeburgesch,lg:Ganda,li:Limburgan&#44; Limburger&#44; Limburgish,ln:Lingala,lo:Lao,lt:Lithuanian,lu:Luba-Katanga,lv:Latvian,gv:Manx,mk:Macedonian,mg:Malagasy,ms:Malay,ml:Malayalam,mt:Maltese,mi:Maori,mr:Marathi,mh:Marshallese,mn:Mongolian,na:Nauru,nv:Navajo&#44; Navaho,nd:North Ndebele,ne:Nepali,ng:Ndonga,nb:Norwegian Bokmål,nn:Norwegian Nynorsk,no:Norwegian,ii:Sichuan Yi&#44; Nuosu,nr:South Ndebele,oc:Occitan,oj:Ojibwa,cu:Church Slavic&#44; Old Slavonic&#44; Church Slavonic&#44; Old Bulgarian&#44; Old Church Slavonic,om:Oromo,or:Oriya,os:Ossetian&#44; Ossetic,pa:Panjabi&#44; Punjabi,pi:Pali,fa:Persian,pl:Polish,ps:Pashto&#44; Pushto,pt:Portuguese,qu:Quechua,rm:Romansh,rn:Rundi,ro:Romanian&#44; Moldavian&#44; Moldovan,ru:Russian,sa:Sanskrit,sc:Sardinian,sd:Sindhi,se:Northern&#44; Sami,sh:Serbo-Croatian,sm:Samoan,sg:Sango,sr:Serbian,gd:Gaelic&#44; Scottish Gaelic,sn:Shona,si:Sinhala&#44; Sinhalese,sk:Slovak,sl:Slovenian,so:Somali,st:Southern Sotho,es:Spanish&#44; Castilian,su:Sundanese,sw:Swahili,ss:Swati,sv:Swedish,ta:Tamil,te:Telugu,tg:Tajik,th:Thai,ti:Tigrinya,bo:Tibetan,tk:Turkmen,tl:Tagalog,tn:Tswana,to:Tonga (Tonga Islands),tr:Turkish,ts:Tsonga,tt:Tatar,tw:Twi,ty:Tahitian,ug:Uighur&#44; Uyghur,uk:Ukrainian,ur:Urdu,uz:Uzbek,ve:Venda,vi:Vietnamese,vo:Volapük,wa:Walloon,cy:Welsh,wo:Wolof,fy:Western Frisian,xh:Xhosa,yi:Yiddish,yo:Yoruba,za:Zhuang&#44; Chuang,zu:Zulu" data-current="en" data-saveOnChange="true"></div>
+                                <div id="GeneralLanguage" class="inp_dropdown no-scroll" data-options="ab:Abkhazian,aa:Afar,af:Afrikaans,ak:Akan,sq:Albanian,am:Amharic,ar:Arabic,an:Aragonese,hy:Armenian,as:Assamese,av:Avaric,ae:Avestan,ay:Aymara,az:Azerbaijani,bm:Bambara,ba:Bashkir,eu:Basque,be:Belarusian,bn:Bengali,bh:Bihari languages,bi:Bislama,bs:Bosnian,br:Breton,bg:Bulgarian,my:Burmese,ca:Catalan&#44; Valencian,ch:Chamorro,ce:Chechen,ny:Chichewa&#44; Chewa&#44; Nyanja,zh:Chinese,cv:Chuvash,kw:Cornish,co:Corsican,cr:Cree,hr:Croatian,cs:Czech,da:Danish,dv:Divehi&#44; Dhivehi&#44; Maldivian,nl:Dutch&#44; Flemish,dz:Dzongkha,en:English,eo:Esperanto,et:Estonian,ee:Ewe,fo:Faroese,fj:Fijian,fi:Finnish,fr:French,ff:Fulah,gl:Galician,ka:Georgian,de:German,el:Greek&#44; Modern(1453–),gn:Guarani,gu:Gujarati,ht:Haitian&#44; Haitian Kreol,ha:Hausa,he:Hebrew,hz:Herero,hi:Hindi,ho:Hiri Motu,hu:Hungarian,ia:Interlingua (International Auxiliary Language Association),id:Indonesian,ie:Interlingue&#44; Occidental,ga:Irish,ig:Igbo,ik:Inupiaq,io:Ido,is:Icelandic,it:Italian,iu:Inuktitut,ja:Japanese,jv:Javanese,kl:Kalaallisut&#44; Greenlandic,kn:Kannada,kr:Kanuri,ks:Kashmiri,kk:Kazakh,km:Central Khmer,ki:Kikuyu&#44; Gikuyu,rw:Kinyarwanda,ky:Kirghiz&#44; Kyrgyz,kv:Komi,kg:Kongo,ko:Korean,ku:Kurdish,kj:Kuanyama&#44; Kwanyama,la:Latin,lb:Luxembourgish&#44; Letzeburgesch,lg:Ganda,li:Limburgan&#44; Limburger&#44; Limburgish,ln:Lingala,lo:Lao,lt:Lithuanian,lu:Luba-Katanga,lv:Latvian,gv:Manx,mk:Macedonian,mg:Malagasy,ms:Malay,ml:Malayalam,mt:Maltese,mi:Maori,mr:Marathi,mh:Marshallese,mn:Mongolian,na:Nauru,nv:Navajo&#44; Navaho,nd:North Ndebele,ne:Nepali,ng:Ndonga,nb:Norwegian Bokmål,nn:Norwegian Nynorsk,no:Norwegian,ii:Sichuan Yi&#44; Nuosu,nr:South Ndebele,oc:Occitan,oj:Ojibwa,cu:Church Slavic&#44; Old Slavonic&#44; Church Slavonic&#44; Old Bulgarian&#44; Old Church Slavonic,om:Oromo,or:Oriya,os:Ossetian&#44; Ossetic,pa:Panjabi&#44; Punjabi,pi:Pali,fa:Persian,pl:Polish,ps:Pashto&#44; Pushto,pt:Portuguese,qu:Quechua,rm:Romansh,rn:Rundi,ro:Romanian&#44; Moldavian&#44; Moldovan,ru:Russian,sa:Sanskrit,sc:Sardinian,sd:Sindhi,se:Northern&#44; Sami,sh:Serbo-Croatian,sm:Samoan,sg:Sango,sr:Serbian,gd:Gaelic&#44; Scottish Gaelic,sn:Shona,si:Sinhala&#44; Sinhalese,sk:Slovak,sl:Slovenian,so:Somali,st:Southern Sotho,es:Spanish&#44; Castilian,su:Sundanese,sw:Swahili,ss:Swati,sv:Swedish,ta:Tamil,te:Telugu,tg:Tajik,th:Thai,ti:Tigrinya,bo:Tibetan,tk:Turkmen,tl:Tagalog,tn:Tswana,to:Tonga (Tonga Islands),tr:Turkish,ts:Tsonga,tt:Tatar,tw:Twi,ty:Tahitian,ug:Uighur&#44; Uyghur,uk:Ukrainian,ur:Urdu,uz:Uzbek,ve:Venda,vi:Vietnamese,vo:Volapük,wa:Walloon,cy:Welsh,wo:Wolof,fy:Western Frisian,xh:Xhosa,yi:Yiddish,yo:Yoruba,za:Zhuang&#44; Chuang,zu:Zulu" data-current="en" data-saveOnChange="true"></div>
                             </div>
                         </div>-->
                         <div class="row-wrapper">
                             <div class="option-caption">Time Format:</div>
                             <div class="option-input">
-                                <div id="GeneralClockFormat" class="inp_dropdown" data-options="24:24h,12:12h" data-current="24" data-saveOnChange="true"></div>
+                                <div id="GeneralClockFormat" class="inp_dropdown no-scroll" data-options="24:24h,12:12h" data-current="24" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Running Animation in FBT:</div>
                             <div class="option-input">
-                                <div id="GeneralEnableRunningAnimationFullBody" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
+                                <div id="GeneralEnableRunningAnimationFullBody" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Portal safe distance in cm:</div>
                             <div class="option-input">
-                                <div id="GeneralPortalSafeDistance" class="inp_slider" data-min="100" data-max="500" data-current="3" data-saveOnChange="true"></div>
+                                <div id="GeneralPortalSafeDistance" class="inp_slider no-scroll" data-min="100" data-max="500" data-current="3" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Enable Telepathic Grab:</div>
                             <div class="option-input">
-                                <div id="GeneralTelepathicGrip" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
+                                <div id="GeneralTelepathicGrip" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
@@ -357,132 +362,132 @@
                         <div class="row-wrapper">
                             <div class="option-caption">Fullscreen:</div>
                             <div class="option-input">
-                                <div id="GraphicsFullscreen" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
+                                <div id="GraphicsFullscreen" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Resolution:</div>
                             <div class="option-input">
-                                <div id="GraphicsResolutionPresets" class="inp_dropdown" data-options="1920x1080,1366x768,1440x900,1536x864,2560x1440" data-current="1920x1080" data-saveOnChange="true"></div>
+                                <div id="GraphicsResolutionPresets" class="inp_dropdown no-scroll" data-options="1920x1080,1366x768,1440x900,1536x864,2560x1440" data-current="1920x1080" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Enable VSync:</div>
                             <div class="option-input">
-                                <div id="GraphicsVSync" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                                <div id="GraphicsVSync" class="inp_toggle no-scroll" data-current="false" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         
                         <div class="row-wrapper">
                             <div class="option-caption">Framerate Target:</div>
                             <div class="option-input">
-                                <div id="GraphicsFramerateTarget" class="inp_dropdown" data-options="60,90,100,120,144,165,240,0:Unlimited" data-current="144" data-saveOnChange="true"></div>
+                                <div id="GraphicsFramerateTarget" class="inp_dropdown no-scroll" data-options="60,90,100,120,144,165,240,0:Unlimited" data-current="144" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Game anti-aliasing:</div>
                             <div class="option-input">
-                                <div id="GraphicsMsaaLevel" class="inp_dropdown" data-options="1:None,2:2x,4:4x,8:8x" data-current="8" data-saveOnChange="true"></div>
+                                <div id="GraphicsMsaaLevel" class="inp_dropdown no-scroll" data-options="1:None,2:2x,4:4x,8:8x" data-current="8" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Camera anti-aliasing:</div>
                             <div class="option-input">
-                                <div id="CameraMsaaLevel" class="inp_dropdown" data-options="0:Same as main camera,1:None,2:2x,4:4x,8:8x" data-current="0" data-saveOnChange="true"></div>
+                                <div id="CameraMsaaLevel" class="inp_dropdown no-scroll" data-options="0:Same as main camera,1:None,2:2x,4:4x,8:8x" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         
                         <div class="row-wrapper">
                             <div class="option-caption">Maximum Mirror Resolution:</div>
                             <div class="option-input">
-                                <div id="GraphicsMaxMirrorResolution" class="inp_dropdown" data-options="32,64,128,256,512,1024,2048,4096" data-current="2048" data-saveOnChange="true"></div>
+                                <div id="GraphicsMaxMirrorResolution" class="inp_dropdown no-scroll" data-options="32,64,128,256,512,1024,2048,4096" data-current="2048" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Mirror anti-aliasing:</div>
                             <div class="option-input">
-                                <div id="MirrorMsaaLevel" class="inp_dropdown" data-options="0:Same as main camera,1:None,2:2x,4:4x,8:8x" data-current="0" data-saveOnChange="true"></div>
+                                <div id="MirrorMsaaLevel" class="inp_dropdown no-scroll" data-options="0:Same as main camera,1:None,2:2x,4:4x,8:8x" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Use Fancy World Transition:</div>
                             <div class="option-input">
-                              <div id="GraphicsFancyTransition" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                              <div id="GraphicsFancyTransition" class="inp_toggle no-scroll" data-current="false" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Highres Portals:</div>
                             <div class="option-input">
-                                <div id="GraphicsHighResPortalImages" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
+                                <div id="GraphicsHighResPortalImages" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         
                         <div class="row-wrapper">
                             <div class="option-caption">Bloom:</div>
                             <div class="option-input">
-                                <div id="GraphicsBloom" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
+                                <div id="GraphicsBloom" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Ambient Occlusion:</div>
                             <div class="option-input">
-                                <div id="GraphicsAO" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
+                                <div id="GraphicsAO" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Color Grading:</div>
                             <div class="option-input">
-                                <div id="GraphicsColorGrading" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
+                                <div id="GraphicsColorGrading" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Auto Exposure:</div>
                             <div class="option-input">
-                                <div id="GraphicsAutoExposure" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
+                                <div id="GraphicsAutoExposure" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Chromatic Aberration:</div>
                             <div class="option-input">
-                                <div id="GraphicsChromaticAberration" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
+                                <div id="GraphicsChromaticAberration" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Depth of Field:</div>
                             <div class="option-input">
-                                <div id="GraphicsDepthOfField" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
+                                <div id="GraphicsDepthOfField" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Grain:</div>
                             <div class="option-input">
-                                <div id="GraphicsGrain" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
+                                <div id="GraphicsGrain" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Lens Distortion:</div>
                             <div class="option-input">
-                                <div id="GraphicsLensDistortion" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
+                                <div id="GraphicsLensDistortion" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Motion Blur:</div>
                             <div class="option-input">
-                                <div id="GraphicsMotionBlur" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
+                                <div id="GraphicsMotionBlur" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Screen Space Reflections:</div>
                             <div class="option-input">
-                                <div id="GraphicsScreenSpaceReflections" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
+                                <div id="GraphicsScreenSpaceReflections" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Vignette:</div>
                             <div class="option-input">
-                                <div id="GraphicsVignette" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
+                                <div id="GraphicsVignette" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
@@ -493,84 +498,84 @@
                         <div class="row-wrapper">
                             <div class="option-caption">Master:</div>
                             <div class="option-input">
-                              <div id="AudioMaster" class="inp_slider" data-min="0" data-max="100" data-current="100" data-saveOnChange="true" data-continuousUpdate="true"></div>
+                              <div id="AudioMaster" class="inp_slider no-scroll" data-min="0" data-max="100" data-current="100" data-saveOnChange="true" data-continuousUpdate="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">World Sfx:</div>
                             <div class="option-input">
-                              <div id="AudioWorldSFX" class="inp_slider" data-min="0" data-max="100" data-current="100" data-saveOnChange="true" data-continuousUpdate="true"></div>
+                              <div id="AudioWorldSFX" class="inp_slider no-scroll" data-min="0" data-max="100" data-current="100" data-saveOnChange="true" data-continuousUpdate="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">World BGM:</div>
                             <div class="option-input">
-                              <div id="AudioWorldBGM" class="inp_slider" data-min="0" data-max="100" data-current="100" data-saveOnChange="true" data-continuousUpdate="true"></div>
+                              <div id="AudioWorldBGM" class="inp_slider no-scroll" data-min="0" data-max="100" data-current="100" data-saveOnChange="true" data-continuousUpdate="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Player Voices:</div>
                             <div class="option-input">
-                              <div id="AudioPlayerVoice" class="inp_slider" data-min="0" data-max="100" data-current="100" data-saveOnChange="true" data-continuousUpdate="true"></div>
+                              <div id="AudioPlayerVoice" class="inp_slider no-scroll" data-min="0" data-max="100" data-current="100" data-saveOnChange="true" data-continuousUpdate="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Avatar:</div>
                             <div class="option-input">
-                              <div id="AudioAvatar" class="inp_slider" data-min="0" data-max="100" data-current="100" data-saveOnChange="true" data-continuousUpdate="true"></div>
+                              <div id="AudioAvatar" class="inp_slider no-scroll" data-min="0" data-max="100" data-current="100" data-saveOnChange="true" data-continuousUpdate="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">User Interface:</div>
                             <div class="option-input">
-                              <div id="AudioUi" class="inp_slider" data-min="0" data-max="100" data-current="100" data-saveOnChange="true" data-continuousUpdate="true"></div>
+                              <div id="AudioUi" class="inp_slider no-scroll" data-min="0" data-max="100" data-current="100" data-saveOnChange="true" data-continuousUpdate="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Props:</div>
                             <div class="option-input">
-                                <div id="AudioProp" class="inp_slider" data-min="0" data-max="100" data-current="100" data-saveOnChange="true" data-continuousUpdate="true"></div>
+                                <div id="AudioProp" class="inp_slider no-scroll" data-min="0" data-max="100" data-current="100" data-saveOnChange="true" data-continuousUpdate="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">VideoPlayer:</div>
                             <div class="option-input">
-                                <div id="AudioVideoPlayer" class="inp_slider" data-min="0" data-max="100" data-current="100" data-saveOnChange="true" data-continuousUpdate="true"></div>
+                                <div id="AudioVideoPlayer" class="inp_slider no-scroll" data-min="0" data-max="100" data-current="100" data-saveOnChange="true" data-continuousUpdate="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Microphone Input:</div>
                             <div class="option-input">
-                                <div id="AudioInputDevice" class="inp_dropdown dropdown-full-width" data-options="Default" data-current="" data-saveOnChange="true"></div>
+                                <div id="AudioInputDevice" class="inp_dropdown dropdown-full-width no-scroll" data-options="Default" data-current="" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Microphone Threshold:</div>
                             <div class="option-input">
-                                <div id="AudioInputThreshold" class="inp_slider" data-min="0" data-max="100" data-current="10" data-saveOnChange="true" data-continuousUpdate="true"></div>
+                                <div id="AudioInputThreshold" class="inp_slider no-scroll" data-min="0" data-max="100" data-current="10" data-saveOnChange="true" data-continuousUpdate="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Push to talk:</div>
                             <div class="option-input">
-                                <div id="AudioPushToTalk" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                                <div id="AudioPushToTalk" class="inp_toggle no-scroll" data-current="false" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Mute on Start:</div>
                             <div class="option-input">
-                                <div id="AudioMuteMicrophoneOnStart" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
+                                <div id="AudioMuteMicrophoneOnStart" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Mute on Join:</div>
                             <div class="option-input">
-                                <div id="AudioMuteMicrophoneOnJoin" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                                <div id="AudioMuteMicrophoneOnJoin" class="inp_toggle no-scroll" data-current="false" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
@@ -582,86 +587,86 @@
                         <div class="row-wrapper">
                             <div class="option-caption">Use Holoport:</div>
                             <div class="option-input">
-                                <div id="ControlEnableHoloPort" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                                <div id="ControlEnableHoloPort" class="inp_toggle no-scroll" data-current="false" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Use Snap turning (VR):</div>
                             <div class="option-input">
-                              <div id="ControlSnapTurning" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
+                              <div id="ControlSnapTurning" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Smoothturn multiplier:</div>
                             <div class="option-input">
-                              <div id="ControlTurnSpeed" class="inp_slider" data-min="1" data-max="100" data-current="100" data-saveOnChange="true"></div>
+                              <div id="ControlTurnSpeed" class="inp_slider no-scroll" data-min="1" data-max="100" data-current="100" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Degree per turn:</div>
                             <div class="option-input">
-                              <div id="ControlTurnDegree" class="inp_slider" data-min="10" data-max="90" data-current="30" data-saveOnChange="true"></div>
+                              <div id="ControlTurnDegree" class="inp_slider no-scroll" data-min="10" data-max="90" data-current="30" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Controller Deadzone Left:</div>
                             <div class="option-input">
-                                <div id="ControlDeadZoneLeft" class="inp_slider" data-min="0" data-max="100" data-current="5" data-saveOnChange="true"></div>
+                                <div id="ControlDeadZoneLeft" class="inp_slider no-scroll" data-min="0" data-max="100" data-current="5" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Controller Deadzone Right:</div>
                             <div class="option-input">
-                                <div id="ControlDeadZoneRight" class="inp_slider" data-min="0" data-max="100" data-current="5" data-saveOnChange="true"></div>
+                                <div id="ControlDeadZoneRight" class="inp_slider no-scroll" data-min="0" data-max="100" data-current="5" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Right Stick Digital Deadzone:</div>
                             <div class="option-input">
-                                <div id="ControlEnableRightsStickDigitalDeadZones" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                                <div id="ControlEnableRightsStickDigitalDeadZones" class="inp_toggle no-scroll" data-current="false" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         
                         <div class="row-wrapper">
                             <div class="option-caption">Mouse Sensitivity:</div>
                             <div class="option-input">
-                                <div id="ControlMouseSensitivity" class="inp_slider" data-min="1" data-max="100" data-current="10" data-saveOnChange="true"></div>
+                                <div id="ControlMouseSensitivity" class="inp_slider no-scroll" data-min="1" data-max="100" data-current="10" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Use Grip to Grab:</div>
                             <div class="option-input">
-                                <div id="ControlUseGripToGrab" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
+                                <div id="ControlUseGripToGrab" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Enable Gestures during Finger Tracking:</div>
                             <div class="option-input">
-                                <div id="ControlEnableGesturesWhileFingerTracking" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                                <div id="ControlEnableGesturesWhileFingerTracking" class="inp_toggle no-scroll" data-current="false" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Enable Vive Advanced Controls:</div>
                             <div class="option-input">
-                                <div id="ControlViveAdvancedControls" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
+                                <div id="ControlViveAdvancedControls" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Enable Gamepad input:</div>
                             <div class="option-input">
-                                <div id="ControlEnableGamepad" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                                <div id="ControlEnableGamepad" class="inp_toggle no-scroll" data-current="false" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">VR Fast Flight:</div>
                             <div class="option-input">
-                                <div id="ControlVRFastFlight" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                                <div id="ControlVRFastFlight" class="inp_toggle no-scroll" data-current="false" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Scale Movement Speed with Avatar Scale:</div>
                             <div class="option-input">
-                                <div id="ControlEnableMovementScale" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                                <div id="ControlEnableMovementScale" class="inp_toggle no-scroll" data-current="false" data-saveOnChange="true"></div>
                             </div>
                         </div>
                     </div>
@@ -674,14 +679,14 @@
                         <div class="row-wrapper">
                             <div class="option-caption">Show Avatars for:</div>
                             <div class="option-input">
-                                <div id="ContentFilterVisibility" class="inp_dropdown" data-options="0:Nobody,1:Friends,2:Everyone" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterVisibility" class="inp_dropdown no-scroll" data-options="0:Nobody,1:Friends,2:Everyone" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Max Avatar Size:</div>
                             <div class="option-input">
-                                <div id="ContentFilterMaxDLSize" class="inp_dropdown" data-options="0:Unlimited,5:5 MB,10:10 MB,20:20 MB,50:50 MB, 100:100 MB" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterMaxDLSize" class="inp_dropdown no-scroll" data-options="0:Unlimited,5:5 MB,10:10 MB,20:20 MB,50:50 MB, 100:100 MB" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         
@@ -689,7 +694,7 @@
                             <div class="row-wrapper">
                                 <div class="option-caption">Nudity:</div>
                                 <div class="option-input">
-                                    <div id="ContentFilterNudity" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                    <div id="ContentFilterNudity" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                                 </div>
                             </div>
                         </div>
@@ -701,35 +706,35 @@
                         <div class="row-wrapper">
                             <div class="option-caption">Suggestive:</div>
                             <div class="option-input">
-                                <div id="ContentFilterSuggestive" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterSuggestive" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
-
+                        
                         <div class="row-wrapper">
                             <div class="option-caption">Flashing Colors:</div>
                             <div class="option-input">
-                                <div id="ContentFilterFlashingColors" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterFlashingColors" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Flashing Lights:</div>
                             <div class="option-input">
-                                <div id="ContentFilterFlashingLights" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterFlashingLights" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Screen Effects:</div>
                             <div class="option-input">
-                                <div id="ContentFilterScreenEffects" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterScreenEffects" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Extremely Bright:</div>
                             <div class="option-input">
-                                <div id="ContentFilterExtremelyBright" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterExtremelyBright" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
@@ -737,14 +742,14 @@
                             <div class="row-wrapper">
                                 <div class="option-caption">Violence:</div>
                                 <div class="option-input">
-                                    <div id="ContentFilterViolence" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                    <div id="ContentFilterViolence" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                                 </div>
                             </div>
     
                             <div class="row-wrapper">
                                 <div class="option-caption">Gore, Death, Cruelty:</div>
                                 <div class="option-input">
-                                    <div id="ContentFilterGore" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                    <div id="ContentFilterGore" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                                 </div>
                             </div>
                         </div>
@@ -752,28 +757,28 @@
                         <div class="row-wrapper">
                             <div class="option-caption">Excessively huge:</div>
                             <div class="option-input">
-                                <div id="ContentFilterExcessivelyHuge" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterExcessivelyHuge" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Excessively small:</div>
                             <div class="option-input">
-                                <div id="ContentFilterExcessivelySmall" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterExcessivelySmall" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Horror:</div>
                             <div class="option-input">
-                                <div id="ContentFilterHorror" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterHorror" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Jumpscare:</div>
                             <div class="option-input">
-                                <div id="ContentFilterJumpscare" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterJumpscare" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
@@ -783,63 +788,91 @@
                         <div class="row-wrapper">
                             <div class="option-caption">Loud Audio:</div>
                             <div class="option-input">
-                                <div id="ContentFilterLoudAudio" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterLoudAudio" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Long Range Audio:</div>
                             <div class="option-input">
-                                <div id="ContentFilterLongRangeAudio" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterLongRangeAudio" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Music:</div>
                             <div class="option-input">
-                                <div id="ContentFilterMusic" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterMusic" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Particle Systems:</div>
                             <div class="option-input">
-                                <div id="ContentFilterParticleSystems" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterParticleSystems" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Dynamic Bones:</div>
                             <div class="option-input">
-                                <div id="ContentFilterDynamicBone" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterDynamicBone" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Dynamic Bone Collider:</div>
                             <div class="option-input">
-                                <div id="ContentFilterDynamicBoneCollision" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterDynamicBoneCollision" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Cameras:</div>
                             <div class="option-input">
-                                <div id="ContentFilterCameras" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="2" data-saveOnChange="true"></div>
+                                <div id="ContentFilterCameras" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="2" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Windzones:</div>
                             <div class="option-input">
-                                <div id="ContentFilterWindZones" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="2" data-saveOnChange="true"></div>
+                                <div id="ContentFilterWindZones" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="2" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Lights:</div>
                             <div class="option-input">
-                                <div id="ContentFilterLights" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="2" data-saveOnChange="true"></div>
+                                <div id="ContentFilterLights" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="2" data-saveOnChange="true"></div>
+                            </div>
+                        </div>
+
+                        <div class="row-wrapper">
+                            <div class="option-caption">Custom Shaders:</div>
+                            <div class="option-input">
+                                <div id="ContentFilterCustomShaders" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="2" data-saveOnChange="true"></div>
+                            </div>
+                        </div>
+
+                        <div class="row-wrapper">
+                            <div class="option-caption">Collider/Trigger:</div>
+                            <div class="option-input">
+                                <div id="ContentFilterCollider" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="2" data-saveOnChange="true"></div>
+                            </div>
+                        </div>
+
+                        <div class="row-wrapper">
+                            <div class="option-caption">Disable Avatars at Distance:</div>
+                            <div class="option-input">
+                                <div id="ContentFilterBlockAvatarsAtDistance" class="inp_toggle no-scroll" data-current="false" data-saveOnChange="true"></div>
+                            </div>
+                        </div>
+
+                        <div class="row-wrapper">
+                            <div class="option-caption">Avatars Disable Distance:</div>
+                            <div class="option-input">
+                                <div id="ContentFilterBlockAvatarsAtDistanceDistance" class="inp_slider no-scroll" data-min="5" data-max="50" data-current="10" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
@@ -854,14 +887,14 @@
                         <div class="row-wrapper">
                             <div class="option-caption">Enable Props:</div>
                             <div class="option-input">
-                                <div id="ContentFilterPropsEnabled" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                                <div id="ContentFilterPropsEnabled" class="inp_toggle no-scroll" data-current="false" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Max Prop Size:</div>
                             <div class="option-input">
-                                <div id="ContentFilterPropsMaxDLSize" class="inp_dropdown" data-options="0:Unlimited,5:5 MB,10:10 MB,20:20 MB,50:50 MB, 100:100 MB" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterPropsMaxDLSize" class="inp_dropdown no-scroll" data-options="0:Unlimited,5:5 MB,10:10 MB,20:20 MB,50:50 MB, 100:100 MB" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         
@@ -871,7 +904,7 @@
                         <div class="row-wrapper">
                             <div class="option-caption">Show Props for:</div>
                             <div class="option-input">
-                                <div id="ContentFilterPropsVisibility" class="inp_dropdown" data-options="0:Nobody,1:Friends,2:Everyone" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterPropsVisibility" class="inp_dropdown no-scroll" data-options="0:Nobody,1:Friends,2:Everyone" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
@@ -879,7 +912,7 @@
                             <div class="row-wrapper">
                                 <div class="option-caption">Nudity:</div>
                                 <div class="option-input">
-                                    <div id="ContentFilterPropsNudity" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                    <div id="ContentFilterPropsNudity" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                                 </div>
                             </div>
                         </div>
@@ -887,35 +920,35 @@
                         <div class="row-wrapper">
                             <div class="option-caption">Suggestive:</div>
                             <div class="option-input">
-                                <div id="ContentFilterPropsSuggestive" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterPropsSuggestive" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         
                         <div class="row-wrapper">
                             <div class="option-caption">Flashing Colors:</div>
                             <div class="option-input">
-                                <div id="ContentFilterPropsFlashingColors" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterPropsFlashingColors" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Flashing Lights:</div>
                             <div class="option-input">
-                                <div id="ContentFilterPropsFlashingLights" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterPropsFlashingLights" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Screen Effects:</div>
                             <div class="option-input">
-                                <div id="ContentFilterPropsScreenEffects" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterPropsScreenEffects" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Extremely Bright:</div>
                             <div class="option-input">
-                                <div id="ContentFilterPropsExtremelyBright" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterPropsExtremelyBright" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
@@ -923,14 +956,14 @@
                             <div class="row-wrapper">
                                 <div class="option-caption">Violence:</div>
                                 <div class="option-input">
-                                    <div id="ContentFilterPropsViolence" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                    <div id="ContentFilterPropsViolence" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                                 </div>
                             </div>
 
                             <div class="row-wrapper">
                                 <div class="option-caption">Gore, Death, Cruelty:</div>
                                 <div class="option-input">
-                                    <div id="ContentFilterPropsGore" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                    <div id="ContentFilterPropsGore" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                                 </div>
                             </div>
                         </div>
@@ -938,28 +971,28 @@
                         <div class="row-wrapper">
                             <div class="option-caption">Excessively huge:</div>
                             <div class="option-input">
-                                <div id="ContentFilterPropsExcessivelyHuge" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterPropsExcessivelyHuge" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Excessively small:</div>
                             <div class="option-input">
-                                <div id="ContentFilterPropsExcessivelySmall" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterPropsExcessivelySmall" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Horror:</div>
                             <div class="option-input">
-                                <div id="ContentFilterPropsHorror" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterPropsHorror" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Jumpscare:</div>
                             <div class="option-input">
-                                <div id="ContentFilterPropsJumpscare" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterPropsJumpscare" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
@@ -969,70 +1002,70 @@
                         <div class="row-wrapper">
                             <div class="option-caption">Loud Audio:</div>
                             <div class="option-input">
-                                <div id="ContentFilterPropsLoudAudio" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterPropsLoudAudio" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Long Range Audio:</div>
                             <div class="option-input">
-                                <div id="ContentFilterPropsLongRangeAudio" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterPropsLongRangeAudio" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Music:</div>
                             <div class="option-input">
-                                <div id="ContentFilterPropsMusic" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="2" data-saveOnChange="true"></div>
+                                <div id="ContentFilterPropsMusic" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="2" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Particle Systems:</div>
                             <div class="option-input">
-                                <div id="ContentFilterPropsParticleSystems" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterPropsParticleSystems" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Dynamic Bones:</div>
                             <div class="option-input">
-                                <div id="ContentFilterPropsDynamicBone" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterPropsDynamicBone" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Dynamic Bone Collider:</div>
                             <div class="option-input">
-                                <div id="ContentFilterPropsDynamicBoneCollision" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
+                                <div id="ContentFilterPropsDynamicBoneCollision" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Cameras:</div>
                             <div class="option-input">
-                                <div id="ContentFilterPropsCameras" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="2" data-saveOnChange="true"></div>
+                                <div id="ContentFilterPropsCameras" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="2" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Video Players:</div>
                             <div class="option-input">
-                                <div id="ContentFilterPropsVideoPlayers" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="1" data-saveOnChange="true"></div>
+                                <div id="ContentFilterPropsVideoPlayers" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="1" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Windzones:</div>
                             <div class="option-input">
-                                <div id="ContentFilterPropsWindZones" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="2" data-saveOnChange="true"></div>
+                                <div id="ContentFilterPropsWindZones" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="2" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Lights:</div>
                             <div class="option-input">
-                                <div id="ContentFilterPropsLights" class="inp_dropdown" data-options="0:Hide,1:Show for friends,2:Show" data-current="2" data-saveOnChange="true"></div>
+                                <div id="ContentFilterPropsLights" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="2" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
@@ -1040,14 +1073,14 @@
                         <div class="row-wrapper">
                             <div class="option-caption">Enable Particle Collision:</div>
                             <div class="option-input">
-                                <div id="InteractionPropsPhysicsCollisionEnabled" class="inp_dropdown" data-options="0:Disable,1:Enable for friends,2:Enable" data-current="0" data-saveOnChange="true"></div>
+                                <div id="InteractionPropsPhysicsCollisionEnabled" class="inp_dropdown no-scroll" data-options="0:Disable,1:Enable for friends,2:Enable" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Enable Colliders:</div>
                             <div class="option-input">
-                                <div id="InteractionPropsPhysicsCollidersEnabled" class="inp_dropdown" data-options="0:Disable,1:Enable for friends,2:Enable" data-current="0" data-saveOnChange="true"></div>
+                                <div id="InteractionPropsPhysicsCollidersEnabled" class="inp_dropdown no-scroll" data-options="0:Disable,1:Enable for friends,2:Enable" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
@@ -1055,7 +1088,21 @@
                         <div class="row-wrapper">
                             <div class="option-caption">Enable Touch Triggers:</div>
                             <div class="option-input">
-                                <div id="InteractionPropsAnimatorTriggersEnabled" class="inp_dropdown" data-options="0:Disable,1:Enable for friends,2:Enable" data-current="0" data-saveOnChange="true"></div>
+                                <div id="InteractionPropsAnimatorTriggersEnabled" class="inp_dropdown no-scroll" data-options="0:Disable,1:Enable for friends,2:Enable" data-current="0" data-saveOnChange="true"></div>
+                            </div>
+                        </div>
+
+                        <div class="row-wrapper">
+                            <div class="option-caption">Custom Shaders:</div>
+                            <div class="option-input">
+                                <div id="ContentFilterPropsCustomShaders" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="2" data-saveOnChange="true"></div>
+                            </div>
+                        </div>
+
+                        <div class="row-wrapper">
+                            <div class="option-caption">Collider/Trigger:</div>
+                            <div class="option-input">
+                                <div id="ContentFilterPropsCollider" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="2" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
@@ -1069,42 +1116,42 @@
                         <div class="row-wrapper">
                             <div class="option-caption">Enable Interaction:</div>
                             <div class="option-input">
-                                <div id="InteractionDynamicBoneInterCollisionEnabled" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                                <div id="InteractionDynamicBoneInterCollisionEnabled" class="inp_toggle no-scroll" data-current="false" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">I can interact with X:</div>
                             <div class="option-input">
-                                <div id="InteractionDynamicBoneInterCollisionRelationFromMe" class="inp_dropdown" data-options="None,Friends,Everyone" data-current="None" data-saveOnChange="true"></div>
+                                <div id="InteractionDynamicBoneInterCollisionRelationFromMe" class="inp_dropdown no-scroll" data-options="None,Friends,Everyone" data-current="None" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">X can interact with me:</div>
                             <div class="option-input">
-                                <div id="InteractionDynamicBoneInterCollisionRelationForMe" class="inp_dropdown" data-options="None,Friends,Everyone" data-current="None" data-saveOnChange="true"></div>
+                                <div id="InteractionDynamicBoneInterCollisionRelationForMe" class="inp_dropdown no-scroll" data-options="None,Friends,Everyone" data-current="None" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         
                         <div class="row-wrapper">
                             <div class="option-caption">Global interaction:</div>
                             <div class="option-input">
-                                <div id="InteractionDynamicBoneInterCollisionRelationGlobal" class="inp_dropdown" data-options="None,Friends,Everyone" data-current="None" data-saveOnChange="true"></div>
+                                <div id="InteractionDynamicBoneInterCollisionRelationGlobal" class="inp_dropdown no-scroll" data-options="None,Friends,Everyone" data-current="None" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         
                         <div class="row-wrapper">
                             <div class="option-caption">Collision Placement:</div>
                             <div class="option-input">
-                                <div id="InteractionDynamicBoneInterCollisionPlacement" class="inp_dropdown" data-options="Hands,HandAndFingers,Everything" data-current="Hands" data-saveOnChange="true"></div>
+                                <div id="InteractionDynamicBoneInterCollisionPlacement" class="inp_dropdown no-scroll" data-options="Hands,HandAndFingers,Everything" data-current="Hands" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Wind Interaction:</div>
                             <div class="option-input">
-                                <div id="InteractionDynamicBoneInteractionWind" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                                <div id="InteractionDynamicBoneInteractionWind" class="inp_toggle no-scroll" data-current="false" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
@@ -1112,21 +1159,28 @@
                         <div class="row-wrapper">
                             <div class="option-caption">Enable Particle Collision:</div>
                             <div class="option-input">
-                                <div id="InteractionPhysicsCollisionEnabled" class="inp_dropdown" data-options="0:Disable,1:Enable for friends,2:Enable" data-current="0" data-saveOnChange="true"></div>
+                                <div id="InteractionPhysicsCollisionEnabled" class="inp_dropdown no-scroll" data-options="0:Disable,1:Enable for friends,2:Enable" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Enable Colliders:</div>
                             <div class="option-input">
-                                <div id="InteractionPhysicsCollidersEnabled" class="inp_dropdown" data-options="0:Disable,1:Enable for friends,2:Enable" data-current="0" data-saveOnChange="true"></div>
+                                <div id="InteractionPhysicsCollidersEnabled" class="inp_dropdown no-scroll" data-options="0:Disable,1:Enable for friends,2:Enable" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Enable Selfcollision:</div>
                             <div class="option-input">
-                                <div id="InteractionPhysicsCollidersSelfEnabled" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
+                                <div id="InteractionPhysicsCollidersSelfEnabled" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
+                            </div>
+                        </div>
+
+                        <div class="row-wrapper">
+                            <div class="option-caption">Enable Movement Parent:</div>
+                            <div class="option-input">
+                                <div id="InteractionMovementParentEnabled" class="inp_dropdown no-scroll" data-options="0:Hide,1:Show for friends,2:Show" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
@@ -1134,7 +1188,7 @@
                         <div class="row-wrapper">
                             <div class="option-caption">Enable Touch Triggers:</div>
                             <div class="option-input">
-                                <div id="InteractionAnimatorTriggersEnabled" class="inp_dropdown" data-options="0:Disable,1:Enable for friends,2:Enable" data-current="0" data-saveOnChange="true"></div>
+                                <div id="InteractionAnimatorTriggersEnabled" class="inp_dropdown no-scroll" data-options="0:Disable,1:Enable for friends,2:Enable" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
@@ -1148,13 +1202,13 @@
                         <div class="row-wrapper">
                             <div class="option-caption">Enable Tracking:</div>
                             <div class="option-input">
-                                <div id="InteractionTobiiEyeTracking" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                                <div id="InteractionTobiiEyeTracking" class="inp_toggle no-scroll" data-current="false" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Enable Blinking:</div>
                             <div class="option-input">
-                                <div id="InteractionTobiiEyeBlinking" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                                <div id="InteractionTobiiEyeBlinking" class="inp_toggle no-scroll" data-current="false" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
@@ -1162,14 +1216,14 @@
                         <div class="row-wrapper">
                             <div class="option-caption">Enable Haptics:</div>
                             <div class="option-input">
-                                <div id="InteractionBHapticsEnabled" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                                <div id="InteractionBHapticsEnabled" class="inp_toggle no-scroll" data-current="false" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Triggers Placement:</div>
                             <div class="option-input">
-                                <div id="InteractionBHapticsTriggerPlacement" class="inp_dropdown" data-options="0:Hands,1:+ Fingers,2:+ Arms,3:+ Torso,4:+ Legs,5:+ Head" data-current="0" data-saveOnChange="true"></div>
+                                <div id="InteractionBHapticsTriggerPlacement" class="inp_dropdown no-scroll" data-options="0:Hands,1:+ Fingers,2:+ Arms,3:+ Torso,4:+ Legs,5:+ Head" data-current="0" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
@@ -1177,14 +1231,14 @@
                         <div class="row-wrapper">
                             <div class="option-caption">Enable Tracking:</div>
                             <div class="option-input">
-                                <div id="InteractionViveFaceTracking" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                                <div id="InteractionViveFaceTracking" class="inp_toggle no-scroll" data-current="false" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Intensity:</div>
                             <div class="option-input">
-                                <div id="InteractionViveFaceTrackingStrength" class="inp_slider" data-min="50" data-max="500" data-current="100" data-saveOnChange="true" data-continuousUpdate="true"></div>
+                                <div id="InteractionViveFaceTrackingStrength" class="inp_slider no-scroll" data-min="50" data-max="500" data-current="100" data-saveOnChange="true" data-continuousUpdate="true"></div>
                             </div>
                         </div>
                         
@@ -1195,7 +1249,7 @@
                         <div class="row-wrapper">
                             <div class="option-caption">Always On Microphone Mode:</div>
                             <div class="option-input">
-                                <div id="ExperimentalAlwaysOnMicrophone" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                                <div id="ExperimentalAlwaysOnMicrophone" class="inp_toggle no-scroll" data-current="false" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
@@ -1203,31 +1257,85 @@
                         <div class="row-wrapper">
                             <div class="option-caption">Plant Feet:</div>
                             <div class="option-input">
-                                <div id="IKPlantFeet" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                                <div id="IKPlantFeet" class="inp_toggle no-scroll" data-current="false" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Pin Hip to Tracker:</div>
                             <div class="option-input">
-                                <div id="IKHipPinned" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
+                                <div id="IKHipPinned" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Straighten Neck:</div>
                             <div class="option-input">
-                                <div id="IKStraightenNeck" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                                <div id="IKStraightenNeck" class="inp_toggle no-scroll" data-current="false" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Hip Shifting:</div>
                             <div class="option-input">
-                                <div id="IKHipShifting" class="inp_toggle" data-current="true" data-saveOnChange="true"></div>
+                                <div id="IKHipShifting" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
                             </div>
                         </div>
                         <div class="row-wrapper">
                             <div class="option-caption">Pre Straighten Spine:</div>
                             <div class="option-input">
-                                <div id="IKPreStraightenSpine" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                                <div id="IKPreStraightenSpine" class="inp_toggle no-scroll" data-current="false" data-saveOnChange="true"></div>
+                            </div>
+                        </div>
+                        
+                        
+                        <h2>Safety Settings!</h2>
+                        <p>Only touch these settings if you know what you are doing!<br></p>
+                        <div class="row-wrapper">
+                            <div class="option-caption">Enable Shader Filtering:</div>
+                            <div class="option-input">
+                                <div id="ExperimentalShaderLimitEnabled" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
+                            </div>
+                        </div>
+                        <div class="row-wrapper">
+                            <div class="option-caption">Tesselation Limit:</div>
+                            <div class="option-input">
+                                <div id="ExperimentalShaderLimitTesselation" class="inp_slider no-scroll" data-min="10" data-max="100" data-current="50" data-saveOnChange="true" data-continuousUpdate="true"></div>
+                            </div>
+                        </div>
+                        <div class="row-wrapper">
+                            <div class="option-caption">Loop Limit:</div>
+                            <div class="option-input">
+                                <div id="ExperimentalShaderLimitLoops" class="inp_dropdown no-scroll" data-options="128,256,512,1024,2048" data-current="128" data-saveOnChange="true"></div>
+                            </div>
+                        </div>
+                        
+                        <h2>Bundle Verifier</h2>
+                        <div class="row-wrapper">
+                            <div class="option-caption">Enable BundleVerifier:</div>
+                            <div class="option-input">
+                                <div id="ExperimentalBundleVerifierEnabled" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
+                            </div>
+                        </div>
+                        <div class="row-wrapper">
+                            <div class="option-caption">Only in Publics:</div>
+                            <div class="option-input">
+                                <div id="ExperimentalBundleVerifierPublicsOnly" class="inp_toggle no-scroll" data-current="true" data-saveOnChange="true"></div>
+                            </div>
+                        </div>
+                        <div class="row-wrapper">
+                            <div class="option-caption">Filter Friends:</div>
+                            <div class="option-input">
+                                <div id="ExperimentalBundleVerifierFilterFriends" class="inp_toggle no-scroll" data-current="false" data-saveOnChange="true"></div>
+                            </div>
+                        </div>
+                        <div class="row-wrapper">
+                            <div class="option-caption">Time Limit (s):</div>
+                            <div class="option-input">
+                                <div id="ExperimentalBundleVerifierTimeLimit" class="inp_slider no-scroll" data-min="5" data-max="60" data-current="10" data-saveOnChange="true" data-continuousUpdate="true"></div>
+                            </div>
+                        </div>
+                        <div class="row-wrapper">
+                            <div class="option-caption">Memory Limit:</div>
+                            <div class="option-input">
+                                <div id="ExperimentalBundleVerifierMemoryLimit" class="inp_dropdown no-scroll" data-options="1024,2048,3072,4096" data-current="2048" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
@@ -1235,18 +1343,17 @@
                         <div class="row-wrapper">
                             <div class="option-caption">Alternative Rescale:</div>
                             <div class="option-input">
-                                <div id="ExperimentalAvatarRescale" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                                <div id="ExperimentalAvatarRescale" class="inp_toggle no-scroll" data-current="false" data-saveOnChange="true"></div>
                             </div>
                         </div>
 
                         <div class="row-wrapper">
                             <div class="option-caption">Allow Smaller Playercollider:</div>
                             <div class="option-input">
-                                <div id="ExperimentalIgnoreMinColliderRadius" class="inp_toggle" data-current="false" data-saveOnChange="true"></div>
+                                <div id="ExperimentalIgnoreMinColliderRadius" class="inp_toggle no-scroll" data-current="false" data-saveOnChange="true"></div>
                             </div>
                         </div>
                     </div>
-
 
                     <div id="settings-support" class="settings-categorie">
                         
@@ -1993,7 +2100,21 @@
 
             if(debug){
                 loadFriends([
-                {Guid: 'AAAA', OnlineState: true,  UserImageUrl: 'https://static-cdn.jtvnw.net/jtv_user_pictures/9990d40f-3095-4377-a43c-2065b2df3130-profile_image-70x70.png', UserName: 'Testuser'}], []);
+                {Guid: 'AAAA', OnlineState: true,  ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'},
+                {Guid: 'AAAA', OnlineState: false, ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'},
+                {Guid: 'AAAA', OnlineState: false, ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'},
+                {Guid: 'AAAA', OnlineState: false, ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'},
+                {Guid: 'AAAA', OnlineState: false, ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'},
+                {Guid: 'AAAA', OnlineState: false, ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'},
+                {Guid: 'AAAA', OnlineState: false, ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'},
+                {Guid: 'AAAA', OnlineState: false, ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'},
+                {Guid: 'AAAA', OnlineState: false, ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'},
+                {Guid: 'AAAA', OnlineState: false, ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'},
+                {Guid: 'AAAA', OnlineState: false, ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'},
+                {Guid: 'AAAA', OnlineState: false, ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'},
+                {Guid: 'AAAA', OnlineState: false, ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'},
+                {Guid: 'AAAA', OnlineState: false, ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'},
+                {Guid: 'AAAA', OnlineState: false, ProfileImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', PlayerName: 'Testuser'}], []);
 
                 loadWorlds([{Guid: 'AAAA', WorldImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', WorldName: 'Testworld'},
                 {Guid: 'AAAA', WorldImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', WorldName: 'Testworld'},
@@ -2009,7 +2130,7 @@
                 {Guid: 'AAAA', AvatarImageUrl: 'https://abis3.fra1.digitaloceanspaces.com/ProfilePictures/Khodrin.png', AvatarName: 'Testavatar (test,bleep)', FilterTags: 'test,bleep'}],
                 [{CategoryKey: 'test', CategoryClearTextName: 'Testcategory'},{CategoryKey: 'bleep', CategoryClearTextName: 'Bleep Category'}]);
 
-                
+                loadMessages([{}], [{}], [{}], [{}], [{}]);
 
                 updateGameDebugInformation({Fps: '999', Ping: '1337', Version: 'Its wednesday my dude'})
 

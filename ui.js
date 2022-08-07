@@ -151,19 +151,23 @@ var speedX = 0;
 var scrollWheelTarget = null;
 
 document.addEventListener('mousedown', function(e){
-    scrollTarget = e.target.closest('.list-content');
-    startY = e.clientY;
-    startX = e.clientX;
-    if(scrollTarget !== null){
-        mouseScrolling = true;
-        startScrollY = scrollTarget.scrollTop;
-        startScrollX = scrollTarget.scrollLeft;
-    }else{
-        scrollTarget = e.target.closest('.scroll-content');
-        if(scrollTarget !== null){
+    var onclick = e.target.getAttribute("onclick");
+    
+    if (onclick == null && !e.target.classList.contains("no-scroll")) {
+        scrollTarget = e.target.closest('.list-content');
+        startY = e.clientY;
+        startX = e.clientX;
+        if (scrollTarget !== null) {
             mouseScrolling = true;
             startScrollY = scrollTarget.scrollTop;
             startScrollX = scrollTarget.scrollLeft;
+        } else {
+            scrollTarget = e.target.closest('.scroll-content');
+            if (scrollTarget !== null) {
+                mouseScrolling = true;
+                startScrollY = scrollTarget.scrollTop;
+                startScrollX = scrollTarget.scrollLeft;
+            }
         }
     }
 });
@@ -415,6 +419,8 @@ engine.on('RemoveWorld', function(_world){
 });
 
 //Friends
+var userOnlineState = {};
+userOnlineState["tmp"] = false;
 function loadFriends(_list){
     friendList = _list;
     
@@ -423,6 +429,15 @@ function loadFriends(_list){
     }
     
     renderFriends(_list);
+}
+
+function updateUsersOnline(_list){
+    for(var i=0; _list[i]; i++){
+        userOnlineState["uo-" + _list[i].Id] = _list[i].IsOnline;
+
+        cvr('#friends .list-content .flex-list #frnd_'+_list[i].Id).className('content-cell friend '+(userOnlineState["uo-" + _list[i].Id]?'frndonline':'frndoffline'));
+        cvr('#friends .list-content .flex-list #frnd_'+_list[i].Id+' .online-state').className('online-state '+(userOnlineState["uo-" + _list[i].Id]?'online':'offline'));
+    }
 }
 
 function renderFriends(_list){
@@ -464,6 +479,10 @@ function filterFriendList(_filter){
 }
 
 function AddFriend(_friend){
+    if (userOnlineState["uo-" + _friend.UserId] !== undefined){
+        _friend.UserIsOnline = userOnlineState["uo-" + _friend.UserId];
+    }
+    
     var html = '<div id="frnd_'+_friend.UserId+'" class="content-cell friend '+(_friend.UserIsOnline?'frndonline':'frndoffline')+'"><div class="content-cell-formatter"></div>'+
         '<div class="content-cell-content"><div class="online-state '+(_friend.UserIsOnline?'online':'offline')+' '+_friend.FilterTags+'"></div>'+
         '<img class="content-image" src="'+
@@ -476,6 +495,10 @@ function AddFriend(_friend){
 }
 
 function UpdateFriend(_friend){
+    if (userOnlineState["uo-" + _friend.UserId] !== undefined){
+        _friend.UserIsOnline = userOnlineState["uo-" + _friend.UserId];
+    }
+    
     cvr('#friends .list-content .flex-list #frnd_'+_friend.UserId).className('content-cell friend '+(_friend.UserIsOnline?'frndonline':'frndoffline'));
     cvr('#friends .list-content .flex-list #frnd_'+_friend.UserId+' .online-state').className('online-state '+(_friend.UserIsOnline?'online':'offline')+' '+_friend.FilterTags);
     if (cvr('#friends .list-content .flex-list #frnd_'+_friend.UserId+' .content-image').first().getAttribute('src') != _friend.UserImageUrl) {
@@ -1027,7 +1050,7 @@ function displayMessageFriendRequest(_friendrequest){
 '        <div class="message-btn" onclick="getUserDetails(\''+_friendrequest.UserId+'\');">'+
 '            <img src="gfx/details.svg">'+
 '            Profile</div>'+
-'        <div class="message-btn" onclick="addFriend(\''+_friendrequest.UserId+'\')">'+
+'        <div class="message-btn" onclick="acceptFriend(\''+_friendrequest.UserId+'\')">'+
 '            <img src="gfx/accept.svg">'+
 '            Accept</div>'+
 '        <div class="message-btn" onclick="denyFriend(\''+_friendrequest.UserId+'\')">'+
@@ -1505,6 +1528,7 @@ var PlayerData = {};
 var userProfileMute;
 var userProfileVolume;
 var userProfilePlayerAvatarsBlocked;
+var userProfileBundleVerifierBypass;
 var userProfileAvatarBlocked;
 var userProfilePropBlocked;
 
@@ -1578,6 +1602,13 @@ function loadUserDetails(_data, _profile){
         '                        </div>'
 
     userSettingsTools += '<div class="row-wrapper">\n' +
+        '                            <div class="option-caption">User Bundle Verifier:</div>\n' +
+        '                            <div class="option-input">\n' +
+        '                                <div id="SelfModerationBundleVerifierAvatar" class="inp_dropdown" data-options="0:Dont Verify,1:Use global settings,2:Always Verify" data-current="' + (_profile.userBundleVerifierBypass) + '" data-saveOnChange="true"></div>\n' +
+        '                            </div>\n' +
+        '                        </div>'
+
+    userSettingsTools += '<div class="row-wrapper">\n' +
         '                            <div class="option-caption">Player Props:</div>\n' +
         '                            <div class="option-input">\n' +
         '                                <div id="SelfModerationUsersProps" class="inp_dropdown" data-options="0:Hide,1:Use content filter,2:Show" data-current="' + (_profile.userPropVisibility) + '" data-saveOnChange="true"></div>\n' +
@@ -1608,6 +1639,7 @@ function loadUserDetails(_data, _profile){
     userProfileVolume = new inp_slider(document.getElementById('SelfModerationVolume'));
     userProfilePlayerAvatarsBlocked = new inp_dropdown(document.getElementById('SelfModerationUsersAvatars'));
     userProfileAvatarBlocked = new inp_dropdown(document.getElementById('SelfModerationAvatar'));
+    userProfileBundleVerifierBypass = new inp_dropdown(document.getElementById('SelfModerationBundleVerifierAvatar'));
     userProfilePropBlocked = new inp_dropdown(document.getElementById('SelfModerationUsersProps'));
 
     moderationView.classList.add('hidden');
@@ -1644,6 +1676,10 @@ function unFriend(_guid){
 
 function addFriend(_guid){
     engine.call('CVRAppCallRelationsManagement', _guid, 'Add');
+}
+
+function acceptFriend(_guid){
+    engine.call('CVRAppCallRelationsManagement', _guid, 'Accept');
 }
 
 function denyFriend(_guid){
@@ -2644,6 +2680,10 @@ engine.on('LoadWorlds', function (_list) {
 
 engine.on('LoadFriends', function (_list) {
     loadFriends(_list);
+});
+
+engine.on('UpdateUsersOnline', function (_list) {
+    updateUsersOnline(JSON.parse(_list));
 });
 
 engine.on('LoadMessages', function(_invites, _friendrequests, _votes, _systems, _dms){
